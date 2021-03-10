@@ -39,38 +39,11 @@ Note: Use the Markdown Table Generator to add/remove values from the table.
 
 
 
-Name
-
-Function
-IP Address
-Operating System
-
-
-
-Jump Box
-Gateway
-10.0.0.1
-Linux
-
-
-TODO
-
-
-
-
-
-TODO
-
-
-
-
-
-TODO
-
-
-
-
-
+| Name             | Function          | IP Address        | Operating System  |
+| -----------------|:-----------------:|:-----------------:|:-----------------:|
+| Jump Box         | Gateway           | 10.0.0.1          | Linux             |
+|                  |                   |                   |                   |
+|                  |                   |                   |                   |
 
 
 Access Policies
@@ -86,13 +59,11 @@ TODO: Which machine did you allow to access your ELK VM? What was its IP address
 A summary of the access policies in place can be found in the table below.
 
 
-
-Name
-Publicly Accessible
-Allowed IP Addresses
-
-
-
+| Name             | Publicly Accessible | Allowed IP Addresses |
+| -----------------|:-------------------:|:--------------------:|
+| Jump Box         | Yes                 |                      |
+|                  |                     |                      |
+|                  |                     |                      |
 
 Jump Box
 Yes/No
