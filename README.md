@@ -27,8 +27,12 @@ A *jump box* is a secure computer that all admins first connect to before launch
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the *data* and *system logs*.
 
-TODO: What does Filebeat watch for?
-TODO: What does Metricbeat record?
+### **What does Filebeat watch for?**
+**Filebeat** is a log shipper that watches for logs and ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana**.
+ 
+### **What does Metricbeat record?**
+**Metricbeat** is a lightweight log shipper that collects metrics ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana**.
+
 
 The configuration details of each machine may be found below.
 Note: Use the Markdown Table Generator to add/remove values from the table.
@@ -36,6 +40,7 @@ Note: Use the Markdown Table Generator to add/remove values from the table.
 
 
 Name
+
 Function
 IP Address
 Operating System
