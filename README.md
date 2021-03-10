@@ -1,33 +1,31 @@
-# CyberSec
-Automated ELK Stack Deployment
+# *Automated ELK Stack Deployment*
+
 The files in this repository were used to configure the network depicted below.
 
-[Elk-Stack-Project-Diagram](Diagrams/Elk-Stack-Project-Diagram.png)
+- [CLICK HERE TO VIEW - Elk-Stack-Project-Diagram](Diagrams/Elk-Stack-Project-Diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the filebeat-playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
 
-TODO: Enter the playbook file.
+- [CLICK HERE TO VIEW - FileBeat-Playbook](Ansible/filebeat-playbook.yml)
 
 This document contains the following details:
-
-Description of the Topologu
-Access Policies
-ELK Configuration
-
-Beats in Use
-Machines Being Monitored
-
-
-How to Use the Ansible Build
+- Description of the Topology
+- Access Policies
+- ELK Configuration
+    - Beats in Use
+    - Machines Being Monitored
+- How to Use the Ansible Build
 
 
-Description of the Topology
+# *Description of the Topology*
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
+Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 
-TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?
+Load Balancing plays an important security role as computing moves evermore to the cloud. The off-loading function of a load balancer defends an organization against *distributed denial-of-service (DDoS) attacks*. It does this by shifting attack traffic from the corporate server to a public cloud provider.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+A *jump box* is a secure computer that all admins first connect to before launching any administrative task or use as an origination point to connect to other servers or untrusted environments.
+
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the *data* and *system logs*.
 
 TODO: What does Filebeat watch for?
 TODO: What does Metricbeat record?
@@ -41,7 +39,6 @@ Name
 Function
 IP Address
 Operating System
-
 
 
 
