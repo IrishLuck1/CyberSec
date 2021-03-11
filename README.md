@@ -1,20 +1,20 @@
-# *Automated ELK Stack Deployment*
+# **Automated ELK Stack Deployment**
 
 The files in this repository were used to configure the network depicted below.
 
-- [CLICK HERE TO VIEW - Elk-Stack-Project-Diagram](Diagrams/Elk-Stack-Project-Diagram.png)
+![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/Diagrams/Elk-Stack-Project-Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the filebeat-playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
 
 - [CLICK HERE TO VIEW - FileBeat-Playbook](Ansible/filebeat-playbook.yml)
 
-This document contains the following details:
-- Description of the Topology
-- Access Policies
-- ELK Configuration
-    - Beats in Use
-    - Machines Being Monitored
-- How to Use the Ansible Build
+**This document contains the following details:**
+- **Description of the Topology**
+- **Access Policies**
+- **ELK Configuration**
+    - **Beats in Use**
+    - **Machines Being Monitored**
+- **How to Use the Ansible Build**
 
 
 # *Description of the Topology*
