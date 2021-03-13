@@ -58,11 +58,14 @@ JumpBox 10.0.0.4/16
 A summary of the access policies in place can be found in the table below.
 
 
-| Name             | Publicly Accessible | Allowed IP Addresses |
-| -----------------|:-------------------:|:--------------------:|
-| Jump Box         | Yes                 |                      |
-|                  |                     |                      |
-|                  |                     |                      |
+| Name                | Publicly Accessible | Allowed IP Addresses |
+| --------------------|:-------------------:|:--------------------:|
+| Jump Box            | Yes                 | Prem Public IP       |
+| Web1                | No                  | N/A                  |
+| Web2                | No                  | N/A                  |
+| Web3                | No                  | N/A                  |
+| Elk-Server/Kibana   | Yes                 | 40.75.76.158         |
+
 
 
 # **Elk Configuration**
