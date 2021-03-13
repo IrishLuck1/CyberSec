@@ -53,20 +53,20 @@ I allowed the JumpBox / Bastion Host to access the ELK-VM in order to manage and
 **JumpBox 10.0.0.4/16**
 
 A summary of the access policies in place can be found in the table below.
-| Name                | Publicly Accessible | Allowed IP Addresses |
-| --------------------|:-------------------:|:--------------------:|
-| Jump Box            | Yes                 | Prem Public IP       |
-| Web1                | No                  | N/A                  |
-| Web2                | No                  | N/A                  |
-| Web3                | No                  | N/A                  |
-| Elk-Server/Kibana   | Yes                 | 40.75.76.158         |
+| Name                | Publicly Accessible | Allowed IP Addresses    |
+| --------------------|:-------------------:|:-----------------------:|
+| Jump Box            | Yes                 | Prem Public IP          |
+| Web1                | No                  | N/A                     |
+| Web2                | No                  | N/A                     |
+| Web3                | No                  | N/A                     |
+| Elk-Server/Kibana   | Yes                 | Public_IP:5601 / Kibana |
 
 
 
 # **Elk Configuration**
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
-TODO: What is the main advantage of automating configuration with Ansible?
+Ansible is an open source automation tool one of many in the I.T. realm but this one is widely used and has a large support community.  
 
 The playbook implements the following tasks:
 
