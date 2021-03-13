@@ -71,7 +71,7 @@ Being able to automate tasks saves time which saves money and provides greater p
 
 
 <!---TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.-->
-- **The playbook implements the following tasks:**
+- **The Elk-Server-Deployment Playbook implements the following tasks:**
     - **Installs docker.io**
     - **Installs pip3**
     - **Updates the vm.max_map_count in the /etc/sysctl.conf file to increase memory size to value: "262144"**
