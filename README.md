@@ -92,6 +92,7 @@ Being able to automate tasks saves time which saves money and provides greater p
 - **We have installed the following Beats on these machines:**
     - **Filebeat**
     - **Metricbeat**
+<!---TODO: Specify which Beats you successfully installed-->
 - **These Beats allow us to collect the following information from each machine:**
     - **Linux /Var Logs**
     - **Cloud Metadata**
