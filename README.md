@@ -34,8 +34,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 **Metricbeat** is a lightweight log shipper that collects metrics ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana**.
 
 
-The configuration details of each machine may be found below.
-
+### **The configuration details of each machine may be found below.**
 | Name             | Function          | IP Address        | Operating System                |
 | -----------------|:-----------------:|:-----------------:|:-------------------------------:|
 | Jumpbox          | Management        | 10.0.0.4/16       | Ubuntu Server (18.04-LTS) Linux |
@@ -44,20 +43,16 @@ The configuration details of each machine may be found below.
 | Web3             | WebServer         | 10.0.0.7/16       | Ubuntu Server (18.04-LTS) Linux |
 | Elk Server       | SysLog            | 10.1.0.4/16       | Ubuntu Server (18.04-LTS) Linux |
 
-Access Policies
+### **Access Policies**
 The machines on the internal network are not exposed to the public Internet.
 Only the **Jumpbox** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-
-On premesis public IP X.X.X.X
+**On premesis public IP X.X.X.X**
 
 Machines within the network can only be accessed by Jumpbox Docker Container.
-
-TODO: Which machine did you allow to access your ELK VM? What was its IP address?
-JumpBox 10.0.0.4/16
+I allowed the JumpBox / Bastion Host to access the ELK-VM in order to manage and push asnible playbooks.
+**JumpBox 10.0.0.4/16**
 
 A summary of the access policies in place can be found in the table below.
-
-
 | Name                | Publicly Accessible | Allowed IP Addresses |
 | --------------------|:-------------------:|:--------------------:|
 | Jump Box            | Yes                 | Prem Public IP       |
