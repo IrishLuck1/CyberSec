@@ -24,7 +24,7 @@ The files listed below have been tested and used to generate a live ELK deployme
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 
-Load Balancing plays an important security role as computing moves evermore to the cloud. The off-loading function of a load balancer defends an organization against *distributed denial-of-service (DDoS) attacks*. It does this by shifting attack traffic from the corporate server to a public cloud provider.
+Load Balancing plays an important security role as computing moves evermore to the cloud. The off-loading function of a load balancer defends an organization against *distributed denial-of-service (DDoS) attacks*. It does this by shifting attack traffic from the corporate server to a public cloud provider.  This is important for accomplishing availability in the CIA triad.
 
 A **jumpbox** is a secure computer that all admins first connect to before launching any administrative task or use as an origination point to connect to other servers or untrusted environments.
 
@@ -40,9 +40,9 @@ https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.htm
 | Name             | Function          | IP Address        | Operating System                |
 | -----------------|:-----------------:|:-----------------:|:-------------------------------:|
 | Jumpbox          | Management        | 10.0.0.4/16       | Ubuntu Server (18.04-LTS) Linux |
-| Web1             | WebServer         | 10.0.0.5/16       | Ubuntu Server (18.04-LTS) Linux |
-| Web2             | WebServer         | 10.0.0.6/16       | Ubuntu Server (18.04-LTS) Linux |
-| Web3             | WebServer         | 10.0.0.7/16       | Ubuntu Server (18.04-LTS) Linux |
+| Web1 - DVWA      | WebServer         | 10.0.0.5/16       | Ubuntu Server (18.04-LTS) Linux |
+| Web2 - DVWA      | WebServer         | 10.0.0.6/16       | Ubuntu Server (18.04-LTS) Linux |
+| Web3 - DVWA      | WebServer         | 10.0.0.7/16       | Ubuntu Server (18.04-LTS) Linux |
 | Elk Server       | SysLog            | 10.1.0.4/16       | Ubuntu Server (18.04-LTS) Linux |
 
 # **Access Policies**
