@@ -77,9 +77,11 @@ Being able to automate tasks saves time which saves money and provides greater p
     - **Updates the vm.max_map_count in the /etc/sysctl.conf file to increase memory size to value: "262144"**
     - **Downloads and launches a Docker ELK Container**
     - **Enable's Docker service on boot**
+
 <!---Note: The following image link needs to be updated. Replace docker_ps_output.png with the name of your screenshot image file.-->
 **The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ElkServerAutomation.png?raw=true)
+
 <!---TODO: List the IP addresses of the machines you are monitoring-->
 **Target Machines & Beats**
 - **This ELK server is configured to monitor the following machines:**
@@ -91,6 +93,7 @@ Being able to automate tasks saves time which saves money and provides greater p
 - **We have installed the following Beats on these machines:**
     - **Filebeat**
     - **Metricbeat**
+
 
 - **These Beats allow us to collect the following information from each machine:**
     - **Linux /Var Logs**
