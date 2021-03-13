@@ -30,11 +30,14 @@ A **jumpbox** is a secure computer that all admins first connect to before launc
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **data** and **system logs.**  It's recommended to use beats in tandem with **Logstash**.
 
-**Filebeat** is a light weight log shipper installed as an agent on your servers for forwarding and centralizing log data.  Filebeat monitors the log files that you specify ships them to either **Logstash** or **Elasticsearch** to be processed, indexed and made viewable by **Kibana**.
+**Filebeat** is a light weight log shipper installed as an agent on your servers for forwarding and centralizing log data.  Filebeat monitors the log files that you specify ships them to either **Logstash** or **Elasticsearch** to be processed, indexed and made viewable by **Kibana.**
+
 https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html
 
 **Metricbeat** is another lightweight log shipper that collects metrics / metadata ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana.**  For more information on what metrics / metadata can be recorded please see the below link.
+
 https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
+
 
 ### **The configuration details of each machine may be found below.**
 | Name             | Function          | IP Address        | Operating System                |
