@@ -93,7 +93,7 @@ Being able to automate tasks saves time which saves money and provides greater p
     - **Metricbeat**
 
 - **These Beats allow us to collect the following information from each machine:**
-    - **/etc/var/logs/*.log**
+    - **Linux /Var Logs**
     - **Cloud Metadata**
     - **Host Metadata**
 
