@@ -28,7 +28,7 @@ Load Balancing plays an important security role as computing moves evermore to t
 
 A **jumpbox** is a secure computer that all admins first connect to before launching any administrative task or use as an origination point to connect to other servers or untrusted environments.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **data** and **system logs.**  It's recommended doing this with beats in tandem with **Logstash**.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **data** and **system logs.**  It's recommended to use beats in tandem with **Logstash**.
 
 **Filebeat** is a light weight log shipper installed as an agent on your servers for forwarding and centralizing log data.  Filebeat monitors the log files that you specify ships them to either **Logstash** or **Elasticsearch** to be processed, indexed and made viewable by **Kibana**.
 https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html
@@ -59,15 +59,15 @@ I allowed the JumpBox / Bastion Host to access the ELK-VM in order to manage and
 | Name                | Publicly Accessible | Allowed IP Addresses    |
 | --------------------|:-------------------:|:-----------------------:|
 | Jump Box            | Yes                 | Prem_Public_IP:22       |
-| Web1                | No                  | N/A                     |
-| Web2                | No                  | N/A                     |
-| Web3                | No                  | N/A                     |
+| Web1 - DVWA         | No                  | N/A                     |
+| Web2 - DVWA         | No                  | N/A                     |
+| Web3 - DVWA         | No                  | N/A                     |
 | Elk-Server/Kibana   | Yes                 | Public_IP:5601          |
 
 
 # **Elk Configuration**
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-The time saving for greater productivity and accuracy due to the lack of human error. It's also widely used and has a large support community.  Further benefits is it's simplicity to setup and use.  No special coding skills are necessary to use Ansible's Playbooks.
+Being able to automate tasks saves time which saves money and provides greater productivity and accuracy due to the lack of human error. It's also widely used and has a large support community.  Further benefits is it's simplicity to setup and use, no special coding skills are necessary to use Ansible's Playbooks.
 
 
 <!---TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.-->
