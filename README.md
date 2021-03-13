@@ -69,10 +69,10 @@ The time saving for greater productivity and accuracy due to the lack of human e
 
 - **The playbook implements the following tasks:**
 
-#TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
+<!---TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.-->
 - **Install docker.io**
 - **Installs pip3**
-- **Updates the vm.max_map_count in the /etc/sysctl.conf file to increase memory size to value: "262144"
+- **Updates the vm.max_map_count in the /etc/sysctl.conf file to increase memory size to value: "262144"**
 - **Download and launch a Docker ELK Container**
 - **Enable Docker service on boot**
 
