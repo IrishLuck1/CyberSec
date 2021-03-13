@@ -88,7 +88,8 @@ Being able to automate tasks saves time which saves money and provides greater p
     - **Web1**
     - **Web2**
     - **Web3**
-    
+
+
 <!---TODO: Specify which Beats you successfully installed-->
 - **We have installed the following Beats on these machines:**
     - **Filebeat**
