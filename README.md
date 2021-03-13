@@ -4,7 +4,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/Diagrams/Elk-Stack-Project-Diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the filebeat-playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
+The files listed below have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of following files may be used to install only certain pieces of it, such as Filebeat/Metricbeat or any other Beats deployments.
 
 - [CLICK HERE to view - Elk-Server-Deployment Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
 - [CLICK HERE to view - FileBeat Deployment Playbook](Ansible/filebeat-playbook.yml)
@@ -33,7 +33,8 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 **Filebeat** is a log shipper that watches for logs and ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana**.
 
 ### **What does Metricbeat record?**
-**Metricbeat** is a lightweight log shipper that collects metrics ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana**.
+**Metricbeat** is a lightweight log shipper that collects metrics ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana.  For more information on what metrics can be recorded please see the below link.**
+https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
 
 
 ### **The configuration details of each machine may be found below.**
