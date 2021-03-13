@@ -59,26 +59,29 @@ A summary of the access policies in place can be found in the table below.
 | Web1                | No                  | N/A                     |
 | Web2                | No                  | N/A                     |
 | Web3                | No                  | N/A                     |
-| Elk-Server/Kibana   | Yes                 | Public_IP:5601 / Kibana |
+| Elk-Server/Kibana   | Yes                 | Public_IP:5601
 
 
 
 # **Elk Configuration**
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
+The time saving for greater productivity and accuracy due to the lack of human error. It's also widely used and has a large support community.  Further benefits is it's simplicity to setup and use.  No special coding skills are necessary to use Ansible's Playbooks.
 
-Ansible is an open source automation tool one of many in the I.T. realm but this one is widely used and has a large support community.  
+- **The playbook implements the following tasks:**
 
-The playbook implements the following tasks:
+#TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
+- **Install docker.io**
+- **Installs pip3**
+- **Updates the vm.max_map_count in the /etc/sysctl.conf file to increase memory size to value: "262144"
+- **Download and launch a Docker ELK Container**
+- **Enable Docker service on boot**
 
-TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
-...
-...
 
 The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
 Note: The following image link needs to be updated. Replace docker_ps_output.png with the name of your screenshot image file.
+![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ElkServerAutomation.png?raw=true)
 
-
-Target Machines & Beats
+**Target Machines & Beats**
 This ELK server is configured to monitor the following machines:
 
 TODO: List the IP addresses of the machines you are monitoring
