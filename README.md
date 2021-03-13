@@ -78,7 +78,7 @@ Being able to automate tasks saves time which saves money and provides greater p
     - **Downloads and launches a Docker ELK Container**
     - **Enable's Docker service on boot**
 <!---Note: The following image link needs to be updated. Replace docker_ps_output.png with the name of your screenshot image file.-->
-The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
+**The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ElkServerAutomation.png?raw=true)
 <!---TODO: List the IP addresses of the machines you are monitoring-->
 **Target Machines & Beats**
@@ -89,8 +89,12 @@ The following screenshot displays the result of running docker ps after successf
 <!---TODO: Specify which Beats you successfully installed-->
 - **We have installed the following Beats on these machines:**
     - **Filebeat**
+    - **Metricbeat**
+
 - **These Beats allow us to collect the following information from each machine:**
-    - **Logfiles**
+    - **/etc/var/logs/*.log**
+    - **Cloud Metadata**
+    - **Host Metadata**
 
 <!---TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., Winlogbeat collects Windows logs, which we use to track user logon events, etc.-->
 
