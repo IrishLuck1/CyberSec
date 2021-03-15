@@ -113,7 +113,7 @@ Copy the _____ file to _____.
 Update the _____ file to include...
 Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
-<!---TODO: Answer the following questions to fill in the blanks:-->
+TODO: Answer the following questions to fill in the blanks:
 
 Which file is the playbook? Where do you copy it?
 Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
