@@ -101,7 +101,7 @@ Being able to automate tasks saves time which saves money and provides greater p
     - **Cloud Metadata**
     - **Host Metadata**
 
-<!---TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., Winlogbeat collects Windows logs, which we use to track user logon events, etc.-->
+TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., Winlogbeat collects Windows logs, which we use to track user logon events, etc.
 
 
 
@@ -116,7 +116,9 @@ Run the playbook, and navigate to ____ to check that the installation worked as 
 TODO: Answer the following questions to fill in the blanks:
 
 Which file is the playbook? Where do you copy it?
-Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
+Which file do you update to make Ansible run the playbook on a specific machine? 
+How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 _Which URL do you navigate to in order to check that the ELK server is running?
 
 As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+Step by Step Walkthrough
