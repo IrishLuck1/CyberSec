@@ -9,7 +9,6 @@ The files listed below have been tested and used to generate a live ELK deployme
 - [CLICK HERE to view - Elk-Server-Deployment Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
 - [CLICK HERE to view - FileBeat Deployment Playbook](Ansible/filebeat-playbook.yml)
 - [CLICK HERE to view - MetricBeat Deployment Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/metricbeat-playbook.yml)
-- [CLICK HERE to view - Web Docker Deployment-Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/webdockerdeployment.yml)
 
 **This document contains the following details:**
 - **Description of the Topology**
