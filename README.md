@@ -108,16 +108,19 @@ https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html
 
 After **Metricbeat** has been deployed you should expect to see Metric Metadata being forwarded to Elasticsearch.  The **Metricbeat** **Azure Module** will consist of one or more **Metricsets** This module specifies details about the service including how to connect, how often to collect metrics, and which metrics to collect.  Each **Metricset** is the part of the module that fetches and structures the data.  Rather than collecting each metric as a separate event, metrisets retrieve a list of multiple related metrics in a single request to a remote system.  For example: the **Azure Module** provides an info metricset that collects information and statistics from the **Azure Module** by running the INFO command and parsing the returned result.  Please refer to the below link for more information on the Azure module for Module-specific configuration notes and Metricsets. This is how we would create dashboards to monitor Azure Metrics such as the following:
 
-- **compute_vm**
-- **compute_vm_scaleset**
-- **storage**
-- **container_instance**
-- **container_registry**
-- **container_service**
-- **database_account**
-- **billing**
-- **app_insights**
-- **app_state**
+| add_cloud_metadata  | add_host_metadata     |
+|:-------------------:|:---------------------:|
+| Compute_vm          | netinfo.enabled       |
+| Compute_vm_scalset  | cache.ttl             |
+| storage             | geo.name              |
+| Container_Instance  | geo.location          |
+| Container_registry  | geo.continent_name    |
+| Container_service   | geo.country_name      |
+| datbase_account     | geo.region_name       |
+| billing             | geo.city_name         |
+| app_insights        | geo.country.iso_code  |
+| app_state           | geo.region_iso_code   |
+| N/A                 | replace_fields        |
 
 https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-module-azure.html
 https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
@@ -140,3 +143,6 @@ _Which URL do you navigate to in order to check that the ELK server is running?
 
 As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 Step by Step Walkthrough
+
+
+
