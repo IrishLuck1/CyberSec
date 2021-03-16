@@ -109,12 +109,12 @@ https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html
 
 After **Metricbeat** has been deployed you should expect to see Metric Metadata being forwarded to Elasticsearch.  The **Metricbeat** **Azure Module** will consist of one or more **Metricsets** This module specifies details about the service including how to connect, how often to collect metrics, and which metrics to collect.  Each **Metricset** is the part of the module that fetches and structures the data.  Rather than collecting each metric as a separate event, metrisets retrieve a list of multiple related metrics in a single request to a remote system.  For example: the **Azure Module** provides an info metricset that collects information and statistics from the **Azure Module** by running the INFO command and parsing the returned result.  Please refer to the below link for more information on the Azure module for Module-specific configuration notes and Metricsets. This is how we would create dashboards to monitor Azure Metrics such as the following:
 
-- **compute_vm
+- **compute_vm**
 - **compute_vm_scaleset**
 - **storage**
 - **container_instance**
 - **container_registry**
-- **container_service
+- **container_service**
 - **database_account**
 - **billing**
 - **app_insights**
