@@ -82,7 +82,7 @@ Being able to automate tasks saves time which saves money and provides greater p
     - **Enable's Docker service on boot**
 
 <!---Note: The following image link needs to be updated. Replace docker_ps_output.png with the name of your screenshot image file.-->
-**The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.**
+**The following screenshot displays the result of running docker ps -a (List all containers) after successfully configuring the ELK instance.**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ElkServerAutomation.png?raw=true)
 
 <!---TODO: List the IP addresses of the machines you are monitoring-->
