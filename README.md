@@ -1,12 +1,14 @@
 # **Automated ELK Stack Deployment**
 
-The files in this repository were used to configure the network depicted below.
+### **The files in this repository were used to configure the network depicted below.**
 
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/Diagrams/Elk-Stack-Project-Diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the filebeat-playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
+The files listed below have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, these files can be modified to install only certain pieces of it; such as Filebeat/Metricbeat or any other Beats desired.
 
-- [CLICK HERE TO VIEW - FileBeat-Playbook](Ansible/filebeat-playbook.yml)
+- [CLICK HERE to view - Elk-Server-Deployment Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
+- [CLICK HERE to view - FileBeat Deployment Playbook](Ansible/filebeat-playbook.yml)
+- [CLICK HERE to view - MetricBeat Deployment Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/metricbeat-playbook.yml)
 
 **This document contains the following details:**
 - **Description of the Topology**
@@ -21,25 +23,28 @@ These files have been tested and used to generate a live ELK deployment on Azure
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 
-Load Balancing plays an important security role as computing moves evermore to the cloud. The off-loading function of a load balancer defends an organization against *distributed denial-of-service (DDoS) attacks*. It does this by shifting attack traffic from the corporate server to a public cloud provider.
+Load Balancing plays an important security role as computing moves evermore to the cloud. The off-loading function of a load balancer defends an organization against *distributed denial-of-service (DDoS) attacks*. It does this by shifting attack traffic from the corporate server to a public cloud provider.  This is important for accomplishing availability in the CIA triad.
 
 A **jumpbox** is a secure computer that all admins first connect to before launching any administrative task or use as an origination point to connect to other servers or untrusted environments.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the *data* and *system logs*.
-### **What does Filebeat watch for?**
-**Filebeat** is a log shipper that watches for logs and ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana**.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **data** and **system logs.**  It's recommended to use beats in tandem with **Logstash**.
 
-### **What does Metricbeat record?**
-**Metricbeat** is a lightweight log shipper that collects metrics ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana**.
+**Filebeat** is a light weight log shipper installed as an agent on your servers for forwarding and centralizing log data.  Filebeat monitors the log files that you specify ships them to either **Logstash** or **Elasticsearch** to be processed, indexed and made viewable by **Kibana.**
+
+https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html
+
+**Metricbeat** is another lightweight log shipper that collects metrics / metadata ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana.**  For more information on what metrics / metadata can be recorded please see the below link.
+
+https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html
 
 
 ### **The configuration details of each machine may be found below.**
 | Name             | Function          | IP Address        | Operating System                |
 | -----------------|:-----------------:|:-----------------:|:-------------------------------:|
 | Jumpbox          | Management        | 10.0.0.4/16       | Ubuntu Server (18.04-LTS) Linux |
-| Web1             | WebServer         | 10.0.0.5/16       | Ubuntu Server (18.04-LTS) Linux |
-| Web2             | WebServer         | 10.0.0.6/16       | Ubuntu Server (18.04-LTS) Linux |
-| Web3             | WebServer         | 10.0.0.7/16       | Ubuntu Server (18.04-LTS) Linux |
+| Web1 - DVWA      | WebServer         | 10.0.0.5/16       | Ubuntu Server (18.04-LTS) Linux |
+| Web2 - DVWA      | WebServer         | 10.0.0.6/16       | Ubuntu Server (18.04-LTS) Linux |
+| Web3 - DVWA      | WebServer         | 10.0.0.7/16       | Ubuntu Server (18.04-LTS) Linux |
 | Elk Server       | SysLog            | 10.1.0.4/16       | Ubuntu Server (18.04-LTS) Linux |
 
 # **Access Policies**
@@ -56,27 +61,29 @@ I allowed the JumpBox / Bastion Host to access the ELK-VM in order to manage and
 | Name                | Publicly Accessible | Allowed IP Addresses    |
 | --------------------|:-------------------:|:-----------------------:|
 | Jump Box            | Yes                 | Prem_Public_IP:22       |
-| Web1                | No                  | N/A                     |
-| Web2                | No                  | N/A                     |
-| Web3                | No                  | N/A                     |
+| Web1 - DVWA         | No                  | N/A                     |
+| Web2 - DVWA         | No                  | N/A                     |
+| Web3 - DVWA         | No                  | N/A                     |
 | Elk-Server/Kibana   | Yes                 | Public_IP:5601          |
 
 
 # **Elk Configuration**
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-The time saving for greater productivity and accuracy due to the lack of human error. It's also widely used and has a large support community.  Further benefits is it's simplicity to setup and use.  No special coding skills are necessary to use Ansible's Playbooks.
+Being able to automate tasks saves time which saves money and provides greater productivity and accuracy due to the lack of human error. It's also widely used and has a large support community.  Further benefits is it's simplicity to setup and use, no special coding skills are necessary to use Ansible's Playbooks.
 
 
 <!---TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.-->
-- **The playbook implements the following tasks:**
+- **The Elk-Server-Deployment Playbook implements the following tasks:**
     - **Installs docker.io**
     - **Installs pip3**
     - **Updates the vm.max_map_count in the /etc/sysctl.conf file to increase memory size to value: "262144"**
     - **Downloads and launches a Docker ELK Container**
     - **Enable's Docker service on boot**
+
 <!---Note: The following image link needs to be updated. Replace docker_ps_output.png with the name of your screenshot image file.-->
-The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
+**The following screenshot displays the result of running docker ps -a (List all containers) after successfully configuring the ELK instance.**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ElkServerAutomation.png?raw=true)
+
 <!---TODO: List the IP addresses of the machines you are monitoring-->
 **Target Machines & Beats**
 - **This ELK server is configured to monitor the following machines:**
@@ -86,11 +93,34 @@ The following screenshot displays the result of running docker ps after successf
 <!---TODO: Specify which Beats you successfully installed-->
 - **We have installed the following Beats on these machines:**
     - **Filebeat**
+    - **Metricbeat**
+<!---TODO: Specify which Beats you successfully installed-->
 - **These Beats allow us to collect the following information from each machine:**
-    - **Logfiles**
+    - **Linux /Var Logs**
+    - **Cloud Metadata**
+    - **Host Metadata**
 
 <!---TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., Winlogbeat collects Windows logs, which we use to track user logon events, etc.-->
+After **Filebeat** has been deployed you should expect log event data to start being forwarded to Logstash and Elasticsearch.  With **Filebeat** you as the administrator set which files are to be monitored.  For example: In a Linux environment if you have **auditd** installed you can setup a cronjob with crontab to create logs anytime account changes are made and have them stored in the **/var/log/** directory.  Anytime a user account change is made you can have that change write a new file or append an existing log file.  When filebeat detects a file size change in the log file, the filebeat input will then start a harvester, the harvester will read the log file line by line until it ends and then it will initiate a **close_inactive** and the session will end and the harvester will close.  At this point if another account change is made and we are appending, the logfile size will change and then the filebeat input will repeat this process forwarding the new event data to the logstash or elasticsearch to be viewed by Kibana.  This is how you would monitor account changes with a linux system.  Please see the below links for more information on filebeat.
 
+https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html 
+https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html
+
+After **Metricbeat** has been deployed you should expect to see Metric Metadata being forwarded to Elasticsearch.  The **Metricbeat** **Azure Module** will consist of one or more **Metricsets** This module specifies details about the service including how to connect, how often to collect metrics, and which metrics to collect.  Each **Metricset** is the part of the module that fetches and structures the data.  Rather than collecting each metric as a separate event, metrisets retrieve a list of multiple related metrics in a single request to a remote system.  For example: the **Azure Module** provides an info metricset that collects information and statistics from the **Azure Module** by running the INFO command and parsing the returned result.  Please refer to the below link for more information on the Azure module for Module-specific configuration notes and Metricsets. This is how we would create dashboards to monitor Azure Metrics such as the following:
+
+- **compute_vm**
+- **compute_vm_scaleset**
+- **storage**
+- **container_instance**
+- **container_registry**
+- **container_service**
+- **database_account**
+- **billing**
+- **app_insights**
+- **app_state**
+
+https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-module-azure.html
+https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
 
 
 # **Using the Playbook**
@@ -101,10 +131,12 @@ Copy the _____ file to _____.
 Update the _____ file to include...
 Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
-<!---TODO: Answer the following questions to fill in the blanks:-->
+TODO: Answer the following questions to fill in the blanks:
 
 Which file is the playbook? Where do you copy it?
-Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
+Which file do you update to make Ansible run the playbook on a specific machine? 
+How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 _Which URL do you navigate to in order to check that the ELK server is running?
 
 As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+Step by Step Walkthrough
