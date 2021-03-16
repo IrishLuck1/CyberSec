@@ -31,11 +31,11 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 **Filebeat** is a light weight log shipper installed as an agent on your servers for forwarding and centralizing log data.  Filebeat monitors the log files that you specify ships them to either **Logstash** or **Elasticsearch** to be processed, indexed and made viewable by **Kibana.**
 
-https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html
+- https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html
 
 **Metricbeat** is another lightweight log shipper that collects metrics / metadata ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana.**  For more information on what metrics / metadata can be recorded please see the below link.
 
-https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html
+- https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html
 
 
 ### **The configuration details of each machine may be found below.**
@@ -103,8 +103,8 @@ Being able to automate tasks saves time which saves money and provides greater p
 <!---TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., Winlogbeat collects Windows logs, which we use to track user logon events, etc.-->
 After **Filebeat** has been deployed you should expect log event data to start being forwarded to Logstash and Elasticsearch.  With **Filebeat** you as the administrator set which files are to be monitored.  For example: In a Linux environment if you have **auditd** installed you can setup a cronjob with crontab to create logs anytime account changes are made and have them stored in the **/var/log/** directory.  Anytime a user account change is made you can have that change write a new file or append an existing log file.  When filebeat detects a file size change in the log file, the filebeat input will then start a harvester, the harvester will read the log file line by line until it ends and then it will initiate a **close_inactive** and the session will end and the harvester will close.  At this point if another account change is made and we are appending, the logfile size will change and then the filebeat input will repeat this process forwarding the new event data to the logstash or elasticsearch to be viewed by Kibana.  This is how you would monitor account changes with a linux system.  Please see the below links for more information on filebeat.
 
-https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html 
-https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html
+- https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html 
+- https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html
 
 After **Metricbeat** has been deployed you should expect to see Metric Metadata being forwarded to Elasticsearch.  The **Metricbeat** **Azure Module** will consist of one or more **Metricsets** This module specifies details about the service including how to connect, how often to collect metrics, and which metrics to collect.  Each **Metricset** is the part of the module that fetches and structures the data.  Rather than collecting each metric as a separate event, metrisets retrieve a list of multiple related metrics in a single request to a remote system.  For example: the **Azure Module** provides an info metricset that collects information and statistics from the **Azure Module** by running the INFO command and parsing the returned result.  Please refer to the below link for more information on the Azure module for Module-specific configuration notes and Metricsets. This is how we would create dashboards to monitor Azure Metrics such as the following:
 
@@ -122,8 +122,8 @@ After **Metricbeat** has been deployed you should expect to see Metric Metadata 
 | app_state           | geo.region_iso_code   |
 | N/A                 | replace_fields        |
 
-https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-module-azure.html
-https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
+- https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-module-azure.html
+- https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
 
 
 # **Using the Playbook**
