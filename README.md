@@ -132,10 +132,10 @@ In order to use the playbook, you will need to have an Ansible control node alre
 1. Copy the **Elk-Server-Deployment.yml** file to **/etc/ansible** directory.
     - [DOWNLOAD - Elk-Server-Deployment.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
 
-2. Make sure That on line 107 of the Ansible.cfg file you will see remoteuser="username" make sure to change this to the username of your admin account.
+2. On line 107 of the Ansible.cfg file you will see the entry **remoteuser="username"** make sure to change this to the username of your admin account on the elk server.
     - [CLICK to view - Ansible.cfg](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
 
-2. Make sure to update the Ansible **Hosts** file to include the **[elk]** group, the elk server **IP Address(s)** and the Ansible **Interpreter**.
+3. Make sure to update the Ansible **Hosts** file to include the **[elk]** group, the elk server **IP Address(s)** and the Ansible **Interpreter**.
     - [CLICK to view - Ansible Hosts File](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
 
 ```diff
