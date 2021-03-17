@@ -235,8 +235,9 @@ by running a ls command and you should see both .deb files installed listed belo
 ```
 ```diff
 5. The final step is to verify you are recieving logs from your webservers, you will navigate to your Kibana site
-to do this.
-    - http://10.1.0.4:5601
+Use the following URL in your browser to verify both Public and Private access are working and you are recieving logs.
+    - http://10.1.0.4:5601  (Private IP)
+    - http://X.X.X.X:5601   (X.X.X.X  is your Public IP if configured to have Public Access)
 ```
 **If successful you should see the following log events in Kibana**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/Filebeat.png)
