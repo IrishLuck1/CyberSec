@@ -208,10 +208,10 @@ The deployment is very similar to the above instructions on deploying the elk-se
 1. Copy the filebeat-configuration.yml & the filebeat-playbook.yml to the /etc/ansible/files directory.
    Copy the Metricbeat-configuration.yml & the Metricbeat-playbook.yml to the /etc/ansible/files directory.
 ```
-    - [DOWNLOAD - Filebeat-Configuration.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/filebeat-configuration.yml)
-    - [DOWNLOAD - Filebeat-Playbook.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/filebeat-playbook.yml)
-    - [DOWNLOAD - Metricbeat-Confgiuration.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/metricbeat-configuration.yml)
-    - [DOWNLOAD - Metricbeat-Playbook.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/metricbeat-playbook.yml)
+   - [DOWNLOAD - Filebeat-Configuration.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/filebeat-configuration.yml)
+   - [DOWNLOAD - Filebeat-Playbook.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/filebeat-playbook.yml)
+   - [DOWNLOAD - Metricbeat-Confgiuration.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/metricbeat-configuration.yml)
+   - [DOWNLOAD - Metricbeat-Playbook.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/metricbeat-playbook.yml)
 ```diff
 2. From the /etc/ansible/files/ directory then run the following command to launch the filebeat-playbook.
     - ansible-playbook filebeat-playbook.yml
