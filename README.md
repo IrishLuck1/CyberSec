@@ -128,8 +128,8 @@ After **Metricbeat** has been deployed you should expect to see Metric Metadata 
 
 # **Using the Playbook**
 ```diff 
-+ This automation was performed on Ubuntu 18.04-LTS Linux Distro```
-
++ This automation was performed on Ubuntu 18.04-LTS Linux Distro.
+```
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 SSH into the control node and follow the steps below:
 
