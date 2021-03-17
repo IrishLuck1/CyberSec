@@ -147,14 +147,19 @@ run the playbook to that IP Address(s).  In this environment we only had 1 elk s
 deploy multiple you'd only need to add the additional IP Address(s) to the hosts file in the [elk] group with the 
 interpreter and the ansible control node would run the playbook on all IP's in the [elk] group.
 
+While you are viewing the hosts file make sure to notice the [webservers] group.  Your playbooks will reference the hosts
+file, and then it'll point toward the group.  This is how your playbook will find the remote nodes to push configurations
+to.
+
 #A collection of hosts belonging to the "elk" group
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
    - [CLICK to view - Ansible Hosts File](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/hosts)
 ```diff
-4. Navigate to the /etc/ansible directory where the playbook is located.  Use the following command on your terminal 
-to run the playbook "ansible-playbook elk-server-deployment.yml" 
+4. Navigate to the /etc/ansible directory where the playbook is located.  
+Use the following command on your terminal to run the playbook 
+"ansible-playbook elk-server-deployment.yml" 
 ```
 
 **You should see similar output to what is in the below screenshot.**
