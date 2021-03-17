@@ -195,8 +195,8 @@ servers you wish to deploy elk to.  It will locate the [elk] group and it'll see
 run the playbook to that IP Address(s).  In this environment we only had 1 elk server to deploy.  If you wanted to 
 deploy multiple you'd only need to add the additional IP Address(s) to the hosts file in the [elk] group with the 
 interpreter and the ansible control node would run the playbook on all IP's in the [elk] group.
-#A collection of hosts belonging to the "elk" group
 
+#A collection of hosts belonging to the "elk" group
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 
