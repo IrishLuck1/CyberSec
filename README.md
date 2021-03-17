@@ -129,22 +129,22 @@ After **Metricbeat** has been deployed you should expect to see Metric Metadata 
 # **Using the Playbook**
 In order to use the playbook, you will need to have an Ansible control node already configured, in this deployment the ansible control node was located on the **Bastion Host / Jumpbox**. Assuming you have such a control node provisioned, SSH into the control node and follow the steps below:
 ```diff
-1. Copy the **Elk-Server-Deployment.yml** file to **/etc/ansible** directory.
+1. Copy the Elk-Server-Deployment.yml file to /etc/ansible directory.
 ```
    - [DOWNLOAD - Elk-Server-Deployment.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
 ```diff
-2. On line 107 of the Ansible.cfg file you will see the entry **remoteuser="username"** make sure to change this to the username of your admin account on the elk server.
+2. On line 107 of the Ansible.cfg file you will see the entry remoteuser="username" make sure to change this to the username of your admin account on the elk server.
 ```
    - [CLICK to view - Ansible.cfg](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
 ```diff
-3. Make sure to update the Ansible **Hosts** file to include the **[elk]** group, the elk server **IP Address(s)** and the Ansible **Interpreter**.
+3. Make sure to update the Ansible Hosts file to include the [elk] group, the elk server IP Address(s) and the Ansible Interpreter.
 #A collection of hosts belonging to the "elk" group
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
    - [CLICK to view - Ansible Hosts File](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
 ```diff
-4. Navigate to the **/etc/ansible** directory where the playbook is located.  Use the following command on your terminal to run the playbook **ansible-playbook elk-server-deployment.yml**. You should see similar output to what is in the below screenshot.
+4. Navigate to the **/etc/ansible** directory where the playbook is located.  Use the following command on your terminal to run the playbook "ansible-playbook elk-server-deployment.yml" You should see similar output to what is in the below screenshot.
 ```
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/PlaybookOutput.png)
 
