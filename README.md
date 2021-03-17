@@ -241,7 +241,7 @@ to do this.
 **If successful you should see the following log events in Kibana**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/Filebeat.png)
 
-# CONGRADULATIONS ON YOUR DEPLOYMEN!!!
+# CONGRADULATIONS ON YOUR DEPLOYMENt!!!
 
 
 
