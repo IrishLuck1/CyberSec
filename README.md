@@ -221,10 +221,11 @@ The deployment is very similar to the above instructions on deploying the elk-se
     - ansible-playbook metricbeat-playbook.yml
 ```
 ```diff
-4. After both playbooks have successfully run SSH into each webserver and verify filebeat/metricbeat installation by running a ls command and you should see both
-.deb files installed listed below.
+4. After both playbooks have successfully run SSH into each webserver and verify filebeat/metricbeat installation
+by running a ls command and you should see both .deb files installed listed below.
     - filebeat-7.4.0-amd64.deb
     - metricbeat-7.4.0-amd64.deb
+```
 5. 
 
 
