@@ -127,11 +127,21 @@ After **Metricbeat** has been deployed you should expect to see Metric Metadata 
 
 
 # **Using the Playbook**
+
+```diff
++ This automation was performed on Ubuntu 18.04-LTS Linux Distro
+```
+
+
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 SSH into the control node and follow the steps below:
 
-Copy the _____ file to _____.
-Update the _____ file to include...
+- Copy the **Ansible.cfg** file to **/etc/ansible** directory.
+    - [CLICK HERE to view - Elk-Server-Deployment Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
+```diff
+- *Note that on line 107 you have remoteuser="username" make sure to change this to the username of your admin account.
+```
+Update the hosts file to include...
 Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 TODO: Answer the following questions to fill in the blanks:
@@ -143,6 +153,5 @@ _Which URL do you navigate to in order to check that the ELK server is running?
 
 As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 Step by Step Walkthrough
-
 
 
