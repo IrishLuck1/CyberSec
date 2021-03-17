@@ -144,13 +144,17 @@ In order to use the playbook, you will need to have an Ansible control node alre
 ```
    - [CLICK to view - Ansible Hosts File](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
 ```diff
-4. Navigate to the **/etc/ansible** directory where the playbook is located.  Use the following command on your terminal to run the playbook "ansible-playbook elk-server-deployment.yml" You should see similar output to what is in the below screenshot.
+4. Navigate to the /etc/ansible directory where the playbook is located.  Use the following command on your terminal to run the playbook "ansible-playbook elk-server-deployment.yml" You should see similar output to what is in the below screenshot.
 ```
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/PlaybookOutput.png)
+```diff
+5. Verification of deployment.  From the Bastion Host / Jumpbox SSH into the elk-server and verify deployment was successful use the following steps.
+    - ssh sysadmin@10.1.0.4
+    - sudo docker ps -a
+```
 
-
-
- and navigate to ____ to check that the installation worked as expected.
+If successful you should see the following output displaying the sebp/elk:761 docker container...
+![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ElkServerAutomation.png)
 
 TODO: Answer the following questions to fill in the blanks:
 
