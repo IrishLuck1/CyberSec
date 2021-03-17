@@ -230,8 +230,13 @@ by running a ls command and you should see both .deb files installed listed belo
     - filebeat-7.4.0-amd64.deb
     - metricbeat-7.4.0-amd64.deb
 ```
-5. 
-
+```diff
+5. The final step is to verify you are recieving logs from your webservers, you will navigate to your Kibana site
+to do this.
+    - http://10.1.0.4:5601
+```
+**If successful you should see the following output displaying the Kibana**
+![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/Filebeat.png)
 
 
 
