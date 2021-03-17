@@ -146,6 +146,9 @@ Module by running the INFO command and parsing the returned result.  Please refe
 information on the Azure module for Module-specific configuration notes and Metricsets. This is how we would 
 create dashboards to monitor Azure Metrics such as the following:
 ```
+- https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-module-azure.html
+- https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
+
 | add_cloud_metadata  | add_host_metadata     |
 |---------------------|-----------------------|
 | Compute_vm          | netinfo.enabled       |
@@ -160,8 +163,7 @@ create dashboards to monitor Azure Metrics such as the following:
 | app_state           | geo.region_iso_code   |
 |                     | replace_fields        |
 
-- https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-module-azure.html
-- https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
+
 
 
 # Using the Playbook! You could say the below is a... Play by Play?... 😂
