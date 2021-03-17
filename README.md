@@ -31,11 +31,11 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 **Filebeat** is a light weight log shipper installed as an agent on your servers for forwarding and centralizing log data.  Filebeat monitors the log files that you specify ships them to either **Logstash** or **Elasticsearch** to be processed, indexed and made viewable by **Kibana.**
 
-https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html
+- https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html
 
 **Metricbeat** is another lightweight log shipper that collects metrics / metadata ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana.**  For more information on what metrics / metadata can be recorded please see the below link.
 
-https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html
+- https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html
 
 
 ### **The configuration details of each machine may be found below.**
@@ -103,33 +103,47 @@ Being able to automate tasks saves time which saves money and provides greater p
 <!---TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., Winlogbeat collects Windows logs, which we use to track user logon events, etc.-->
 After **Filebeat** has been deployed you should expect log event data to start being forwarded to Logstash and Elasticsearch.  With **Filebeat** you as the administrator set which files are to be monitored.  For example: In a Linux environment if you have **auditd** installed you can setup a cronjob with crontab to create logs anytime account changes are made and have them stored in the **/var/log/** directory.  Anytime a user account change is made you can have that change write a new file or append an existing log file.  When filebeat detects a file size change in the log file, the filebeat input will then start a harvester, the harvester will read the log file line by line until it ends and then it will initiate a **close_inactive** and the session will end and the harvester will close.  At this point if another account change is made and we are appending, the logfile size will change and then the filebeat input will repeat this process forwarding the new event data to the logstash or elasticsearch to be viewed by Kibana.  This is how you would monitor account changes with a linux system.  Please see the below links for more information on filebeat.
 
-https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html 
-https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html
+- https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html 
+- https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html
 
 After **Metricbeat** has been deployed you should expect to see Metric Metadata being forwarded to Elasticsearch.  The **Metricbeat** **Azure Module** will consist of one or more **Metricsets** This module specifies details about the service including how to connect, how often to collect metrics, and which metrics to collect.  Each **Metricset** is the part of the module that fetches and structures the data.  Rather than collecting each metric as a separate event, metrisets retrieve a list of multiple related metrics in a single request to a remote system.  For example: the **Azure Module** provides an info metricset that collects information and statistics from the **Azure Module** by running the INFO command and parsing the returned result.  Please refer to the below link for more information on the Azure module for Module-specific configuration notes and Metricsets. This is how we would create dashboards to monitor Azure Metrics such as the following:
 
-- **compute_vm**
-- **compute_vm_scaleset**
-- **storage**
-- **container_instance**
-- **container_registry**
-- **container_service**
-- **database_account**
-- **billing**
-- **app_insights**
-- **app_state**
+| add_cloud_metadata  | add_host_metadata     |
+|---------------------|-----------------------|
+| Compute_vm          | netinfo.enabled       |
+| Compute_vm_scalset  | cache.ttl             |
+| storage             | geo.name              |
+| Container_Instance  | geo.location          |
+| Container_registry  | geo.continent_name    |
+| Container_service   | geo.country_name      |
+| datbase_account     | geo.region_name       |
+| billing             | geo.city_name         |
+| app_insights        | geo.country.iso_code  |
+| app_state           | geo.region_iso_code   |
+|                     | replace_fields        |
 
-https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-module-azure.html
-https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
+- https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-module-azure.html
+- https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
 
 
 # **Using the Playbook**
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
-SSH into the control node and follow the steps below:
+In order to use the playbook, you will need to have an Ansible control node already configured, in this deployment the ansible control node was located on the **Bastion Host / Jumpbox**. Assuming you have such a control node provisioned, SSH into the control node and follow the steps below:
 
-Copy the _____ file to _____.
-Update the _____ file to include...
-Run the playbook, and navigate to ____ to check that the installation worked as expected.
+1. Copy the **Elk-Server-Deployment.yml** file to **/etc/ansible** directory.
+    - [DOWNLOAD - Elk-Server-Deployment.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
+
+2. On line 107 of the Ansible.cfg file you will see the entry **remoteuser="username"** make sure to change this to the username of your admin account on the elk server.
+    - [CLICK to view - Ansible.cfg](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
+
+3. Make sure to update the Ansible **Hosts** file to include the **[elk]** group, the elk server **IP Address(s)** and the Ansible **Interpreter**.
+    - [CLICK to view - Ansible Hosts File](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
+
+```diff
+#A collection of hosts belonging to the "elk" group
+[elk]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+```
+3. Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 TODO: Answer the following questions to fill in the blanks:
 
@@ -140,3 +154,5 @@ _Which URL do you navigate to in order to check that the ELK server is running?
 
 As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 Step by Step Walkthrough
+
+
