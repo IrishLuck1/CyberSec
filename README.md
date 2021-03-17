@@ -148,12 +148,13 @@ In order to use the playbook, you will need to have an Ansible control node alre
 ```
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/PlaybookOutput.png)
 ```diff
-5. Verification of deployment.  From the Bastion Host / Jumpbox SSH into the elk-server and verify deployment was successful use the following steps.
+5. Verification of deployment.
+From the Bastion Host / Jumbox run the following command to SSH into the newly deployed elk-server.
     - ssh sysadmin@10.1.0.4
+Once you are in the elk-server command line run the following command.
     - sudo docker ps -a
 ```
-
-If successful you should see the following output displaying the sebp/elk:761 docker container...
+**If successful you should see the following output displaying the sebp/elk:761 docker container...**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ElkServerAutomation.png)
 
 TODO: Answer the following questions to fill in the blanks:
@@ -163,7 +164,5 @@ Which file do you update to make Ansible run the playbook on a specific machine?
 How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 _Which URL do you navigate to in order to check that the ELK server is running?
 
-As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
-Step by Step Walkthrough
 
 
