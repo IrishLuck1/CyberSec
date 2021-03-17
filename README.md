@@ -166,7 +166,9 @@ create dashboards to monitor Azure Metrics such as the following:
 
 # Using the Playbook! You could say the below is a... Play by Play?... 😂
 ```diff
-In order to use the playbook, you will need to have an Ansible control node already configured, in this deployment the ansible control node was located on the **Bastion Host / Jumpbox**. Assuming you have such a control node provisioned, SSH into the control node and follow the steps below:
+In order to use the playbook, you will need to have an Ansible control node already configured, in this deployment the 
+ansible control node was located on the **Bastion Host / Jumpbox**. Assuming you have such a control node provisioned, 
+SSH into the control node and follow the steps below:
 ```
 ```diff
 1. Copy the Elk-Server-Deployment.yml file to /etc/ansible/ directory. (This file is your playbook)
