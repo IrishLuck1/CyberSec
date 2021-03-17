@@ -126,7 +126,7 @@ After **Metricbeat** has been deployed you should expect to see Metric Metadata 
 - https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
 
 
-# **Using the Playbook**
+# **Using the Playbook** : You could say the below is a... Play by Play?...
 In order to use the playbook, you will need to have an Ansible control node already configured, in this deployment the ansible control node was located on the **Bastion Host / Jumpbox**. Assuming you have such a control node provisioned, SSH into the control node and follow the steps below:
 ```diff
 1. Copy the Elk-Server-Deployment.yml file to /etc/ansible/ directory. (This file is your playbook)
@@ -143,7 +143,7 @@ of your admin account on the elk server.
 Interpreter.  This is not your system hosts file but the ansible specific hosts file located in the /etc/ansible/ 
 directory.  When you run your playbook it's going to look in the ansible hosts file for the IP Address(s) of the 
 servers you wish to deploy elk to.  It will locate the [elk] group and it'll see the 10.1.0.4 ip address and it'll 
-run the playbook to that ip address.  In this environment we only had 1 elk server to deploy.  If you wanted to 
+run the playbook to that IP Address(s).  In this environment we only had 1 elk server to deploy.  If you wanted to 
 deploy multiple you'd only need to add the additional IP Address(s) to the hosts file in the [elk] group with the 
 interpreter and the ansible control node would run the playbook on all IP's in the [elk] group.
 
