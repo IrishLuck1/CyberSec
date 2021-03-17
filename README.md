@@ -141,8 +141,10 @@ of your admin account on the elk server.
 ```diff
 3. Make sure to update the Ansible "hosts" file to include the [elk] group, the elk server IP Address(s) and the Ansible 
 Interpreter.  This is not your system hosts file but the ansible specific hosts file located in the /etc/ansible/ 
-directory.  When you run your playbook it's going to look in the ansible hosts file for the IP Address(s) of the 
-servers you wish to deploy elk to.  It will locate the [elk] group and it'll see the 10.1.0.4 ip address and it'll 
+directory.  
+
+When you run your playbook it's going to look in the ansible hosts file for the "Group" with the IP Address(s) of the 
+servers you wish to deploy elk to.  It will locate the [elk] group and it'll see the 10.1.0.4 IP Address(s) and it'll 
 run the playbook to that IP Address(s).  In this environment we only had 1 elk server to deploy.  If you wanted to 
 deploy multiple you'd only need to add the additional IP Address(s) to the hosts file in the [elk] group with the 
 interpreter and the ansible control node would run the playbook on all IP's in the [elk] group.
@@ -154,6 +156,12 @@ to.
 #A collection of hosts belonging to the "elk" group
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+[webservers]
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 ```
    - [CLICK to view - Ansible Hosts File](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/hosts)
 ```diff
