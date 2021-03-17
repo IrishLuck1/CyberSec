@@ -140,11 +140,12 @@ admin account on the elk server.
    - [CLICK to view - Ansible.cfg](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
 ```diff
 3. Make sure to update the Ansible "hosts" file to include the [elk] group, the elk server IP Address(s) and the Ansible Interpreter.  
-This is not your system hosts file but the ansible specific hosts file located in the /etc/ansible/ directory.  When you run your playbook 
-it's going to look in the ansible hosts file for the IP Address(s) of the servers you wish to deploy elk to.  It will locate the [elk] 
-group and it'll see the 10.1.0.4 ip address and it'll run the playbook to that ip address.  In this environment we only had 1 elk server to deploy.  
-If you wanted to deploy multiple you'd only need to add the additional IP Address(s) to the hosts file in the [elk] group with the interpreter and 
-the ansible control node would run the playbook on all IP's in the [elk] group.
+This is not your system hosts file but the ansible specific hosts file located in the /etc/ansible/ directory.  When you run your 
+playbook it's going to look in the ansible hosts file for the IP Address(s) of the servers you wish to deploy elk to.  It will 
+locate the [elk] group and it'll see the 10.1.0.4 ip address and it'll run the playbook to that ip address.  In this environment
+we only had 1 elk server to deploy.  If you wanted to deploy multiple you'd only need to add the additional IP Address(s) to 
+the hosts file in the [elk] group with the interpreter and the ansible control node would run the playbook on all IP's in 
+the [elk] group.
 
 #A collection of hosts belonging to the "elk" group
 [elk]
@@ -152,8 +153,9 @@ the ansible control node would run the playbook on all IP's in the [elk] group.
 ```
    - [CLICK to view - Ansible Hosts File](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
 ```diff
-4. Navigate to the /etc/ansible directory where the playbook is located.  Use the following command on your terminal to run the playbook 
-"ansible-playbook elk-server-deployment.yml" You should see similar output to what is in the below screenshot.
+4. Navigate to the /etc/ansible directory where the playbook is located.  Use the following command on your terminal 
+to run the playbook "ansible-playbook elk-server-deployment.yml" You should see similar output to what is in the 
+below screenshot.
 ```
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/PlaybookOutput.png)
 ```diff
