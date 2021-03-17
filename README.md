@@ -125,7 +125,7 @@ example: In a Linux environment if you have auditd installed you can setup a cro
 to create logs anytime account changes are made and have them stored in the /var/log/ directory.  
 Anytime a user account change is made you can have that change write a new file or append an existing 
 log file.  When filebeat detects a file size change in the log file, the filebeat input will then start
-a harvester, the harvester will read the log file line by line until it ends and then it will initiate a 
+a harvester, the harvester will read the log file line by line until it reaches the end and then it will initiate a 
 close_inactive and the session will end and the harvester will close.  At this point if another account
 change is made and we are appending, the logfile size will change and then the filebeat input will repeat
 this process forwarding the new event data to the logstash or elasticsearch to be viewed by Kibana.
