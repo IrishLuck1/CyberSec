@@ -165,8 +165,9 @@ create dashboards to monitor Azure Metrics such as the following:
 
 
 # Using the Playbook! You could say the below is a... Play by Play?... 😂
-
+```diff
 In order to use the playbook, you will need to have an Ansible control node already configured, in this deployment the ansible control node was located on the **Bastion Host / Jumpbox**. Assuming you have such a control node provisioned, SSH into the control node and follow the steps below:
+```
 ```diff
 1. Copy the Elk-Server-Deployment.yml file to /etc/ansible/ directory. (This file is your playbook)
 ```
@@ -241,11 +242,11 @@ on port 5601.  Use the following URL in your browser to verify both Public and P
 ![](https://media.giphy.com/media/3o6Mb96ZOdz0U2TDag/giphy.gif)
 
 **HOW DO WE DO IT???!!!**
-
+```diff
 The below will be the instructions on how to automate the deployment process of our BEATS.  We will be deploying
 Filebeat & Metricbeat.  The process at this point will be much shorter now that we have the elk-server deployed.
 The deployment is very similar to the above instructions on deploying the elk-server.
-
+```
 ```diff
 1. Copy the filebeat-configuration.yml & the filebeat-playbook.yml to the /etc/ansible/files directory.
    Copy the metricbeat-configuration.yml & the metricbeat-playbook.yml to the /etc/ansible/files directory.
