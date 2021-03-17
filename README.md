@@ -126,33 +126,69 @@ After **Metricbeat** has been deployed you should expect to see Metric Metadata 
 - https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
 
 
-# **Using the Playbook**
+# **Using the Playbook! You could say the below is a... Play by Play?...** 😂
 In order to use the playbook, you will need to have an Ansible control node already configured, in this deployment the ansible control node was located on the **Bastion Host / Jumpbox**. Assuming you have such a control node provisioned, SSH into the control node and follow the steps below:
-
-1. Copy the **Elk-Server-Deployment.yml** file to **/etc/ansible** directory.
-    - [DOWNLOAD - Elk-Server-Deployment.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
-
-2. On line 107 of the Ansible.cfg file you will see the entry **remoteuser="username"** make sure to change this to the username of your admin account on the elk server.
-    - [CLICK to view - Ansible.cfg](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
-
-3. Make sure to update the Ansible **Hosts** file to include the **[elk]** group, the elk server **IP Address(s)** and the Ansible **Interpreter**.
-    - [CLICK to view - Ansible Hosts File](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
-
 ```diff
+1. Copy the Elk-Server-Deployment.yml file to /etc/ansible/ directory. (This file is your playbook)
+```
+   - [DOWNLOAD - Elk-Server-Deployment.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
+```diff
+2. On line 107 of the Ansible.cfg file you will see the entry remoteuser="username" make sure to change this to the 
+username of your admin account on the elk server.
+*note - The stock configuration should be sufficient for most users, but there may be reasons you would want to 
+change them.
+```
+   - [CLICK to view - Ansible.cfg](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
+```diff
+3. Make sure to update the Ansible "hosts" file to include the [elk] group, the elk server IP Address(s) and the
+Ansible Interpreter.  This is not your system hosts file but the ansible specific hosts file located in the
+/etc/ansible/ directory.  
+
+When you run your playbook it's going to look in the ansible hosts file for the "Group" with the IP Address(s) of the 
+servers you wish to deploy elk to.  It will locate the [elk] group and it'll see the 10.1.0.4 IP Address(s) and it'll 
+run the playbook to that IP Address(s).  In this environment we only had 1 elk server to deploy.  If you wanted to 
+deploy multiple you'd only need to add the additional IP Address(s) to the hosts file in the [elk] group with the 
+interpreter and the ansible control node would run the playbook on all IP's in the [elk] group.
 #A collection of hosts belonging to the "elk" group
+
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-```
-3. Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
-TODO: Answer the following questions to fill in the blanks:
+
+While you are viewing the hosts file make sure to notice the [webservers] group.  Your playbooks will reference the
+hosts file, and then it'll point toward the group.  This is how your playbook will find the remote nodes to push 
+configurations to.
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+[webservers]
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+```
+   - [CLICK to view - Ansible Hosts File](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/hosts)
+```diff
+4. Navigate to the /etc/ansible directory where the playbook is located.  
+Use the following command on your terminal to run the playbook 
+"ansible-playbook elk-server-deployment.yml" 
+```
+
+**You should see similar output to what is in the below screenshot.**
+![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/PlaybookOutput.png)
+
+```diff
+5. Verification of deployment.
+From the Bastion Host / Jumbox run the following command to SSH into the newly deployed elk-server.
+    - ssh sysadmin@10.1.0.4
+Once you are in the elk-server command line run the following command.
+    - sudo docker ps -a
+```
+**If successful you should see the following output displaying the sebp/elk:761 docker container...**
+![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ElkServerAutomation.png)
 
 Which file is the playbook? Where do you copy it?
 Which file do you update to make Ansible run the playbook on a specific machine? 
 How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 _Which URL do you navigate to in order to check that the ELK server is running?
 
-As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
-Step by Step Walkthrough
 
 
