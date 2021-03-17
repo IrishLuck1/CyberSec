@@ -127,21 +127,22 @@ After **Metricbeat** has been deployed you should expect to see Metric Metadata 
 
 
 # **Using the Playbook**
-```diff 
-+ This automation was performed on Ubuntu 18.04-LTS Linux Distro.
-```
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
-SSH into the control node and follow the steps below:
+In order to use the playbook, you will need to have an Ansible control node already configured, in this deployment the ansible control node was located on the **Bastion Host / Jumpbox**. Assuming you have such a control node provisioned, SSH into the control node and follow the steps below:
 
-- Copy the **Ansible.cfg** file to **/etc/ansible** directory.
+1. Copy the **Elk-Server-Deployment.yml** file to **/etc/ansible** directory.
     - [DOWNLOAD - Elk-Server-Deployment.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
 
-```diff
-- *Note that on line 107 you have remoteuser="username" make sure to change this to the username of your admin account.
-```
+- *Note - That on line 107 of the Ansible.cfg file you will see remoteuser="username" make sure to change this to the username of your admin account.
+[Click to view - Ansible.cfg]https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg
 
-Update the hosts file to include...
-Run the playbook, and navigate to ____ to check that the installation worked as expected.
+2. Make sure to update the Ansible **Hosts** file to include the **[elk]** group, the elk server **IP Address(s)** and the Ansible **Interpreter**.
+    - [CLICK to view - Ansible Hosts File](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
+```diff
+#A collection of hosts belonging to the "elk" group
+[elk]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+```
+3. Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 TODO: Answer the following questions to fill in the blanks:
 
