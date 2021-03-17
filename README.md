@@ -200,6 +200,10 @@ on port 5601.  Use the following URL in your browser to verify both Public and P
 
 # **Lets get the heart of our deployment BEATING!** ❤️
 
+![](https://media.giphy.com/media/3o6Mb96ZOdz0U2TDag/giphy.gif)
+
+**HOW DO WE DO IT???!!!**
+
 The below will be the instructions on how to automate the deployment process of our BEATS.  We will be deploying
 Filebeat & Metricbeat.  The process at this point will be much shorter now that we have the elk-server deployed.
 The deployment is very similar to the above instructions on deploying the elk-server.
