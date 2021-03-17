@@ -198,7 +198,7 @@ on port 5601.  Use the following URL in your browser to verify both Public and P
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/Kibana.png)
 
 
-# **Lets get the heart of our deployment BEATING!**
+# **Lets get the heart of our deployment BEATING!** ❤️
 
 The below will be the instructions on how to automate the deployment process of our BEATS.  We will be deploying
 Filebeat & Metricbeat.  The process at this point will be much shorter now that we have the elk-server deployed.
