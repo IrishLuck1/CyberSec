@@ -1,10 +1,12 @@
-# **Automated ELK Stack Deployment**
+# Automated ELK Stack Deployment
 
-### **The files in this repository were used to configure the network depicted below.**
+### The files in this repository were used to configure the network depicted below.
 
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/Diagrams/Elk-Stack-Project-Diagram.png)
 ```diff
-The files/playbooks listed below have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, these files can be modified to install only certain pieces of it; such as Filebeat/Metricbeat or any other Beats desired.
+The files/playbooks listed below have been tested and used to generate a live ELK deployment on Azure. They can be used
+to either recreate the entire deployment pictured above. Alternatively, these files can be modified to install only 
+certain pieces of it; such as Filebeat/Metricbeat or any other Beats desired.
 ```
 - [CLICK HERE to view - Elk-Server-Deployment Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
 - [CLICK HERE to view - FileBeat Deployment Playbook](Ansible/filebeat-playbook.yml)
@@ -19,25 +21,35 @@ The files/playbooks listed below have been tested and used to generate a live EL
 - **How to Use the Ansible Build**
 
 
-# *Description of the Topology*
+# Description of the Topology
 ```diff
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
-Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web 
+Application.  Load balancing ensures that the application will be highly available, in addition to restricting access 
+to the network.
 
-Load Balancing plays an important security role as computing moves evermore to the cloud. The off-loading function of a load balancer defends an organization against *distributed denial-of-service (DDoS) attacks*. It does this by shifting attack traffic from the corporate server to a public cloud provider.  This is important for accomplishing availability in the CIA triad.
+Load Balancing plays an important security role as computing moves evermore to the cloud. The off-loading function 
+of a load balancer defends an organization against distributed denial-of-service (DDoS) attacks. It does this by 
+shifting attack traffic from the corporate server to a public cloud provider.  This is important for accomplishing 
+availability in the CIA triad.
 ```
 ```diff
-A **jumpbox** is a secure computer that all admins first connect to before launching any administrative task or use as an origination point to connect to other servers or untrusted environments.
+A jumpbox is a secure computer that all admins first connect to before launching any administrative task or use 
+as an origination point to connect to other servers or untrusted environments.
 ```
 ```diff
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **data** and **system logs.**  It's recommended to use beats in tandem with **Logstash**.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.  
+It's recommended to use beats in tandem with Logstash.
 ```
 ```diff
-**Filebeat** is a light weight log shipper installed as an agent on your servers for forwarding and centralizing log data.  Filebeat monitors the log files that you specify ships them to either **Logstash** or **Elasticsearch** to be processed, indexed and made viewable by **Kibana.**
+Filebeat is a light weight log shipper installed as an agent on your servers for forwarding and centralizing log 
+data.  Filebeat monitors the log files that you specify ships them to either Logstash or Elasticsearch to be
+processed, indexed and made viewable by Kibana.
 ```
 - https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html
 ```diff
-**Metricbeat** is another lightweight log shipper that collects metrics / metadata ships them to **Logstash** to be processed and sent to **Elasticsearch** to be indexed and made viewable by **Kibana.**  For more information on what metrics / metadata can be recorded please see the below link.
+Metricbeat is another lightweight log shipper that collects metrics / metadata ships them to Logstash to be 
+processed and sent to Elasticsearch to be indexed and made viewable by Kibana.  For more information on what
+metrics / metadata can be recorded please see the below link.
 ```
 - https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html
 
@@ -51,19 +63,20 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 | Web3 - DVWA      | WebServer         | 10.0.0.7/16       | Ubuntu Server (18.04-LTS) Linux |
 | Elk Server       | SysLog            | 10.1.0.4/16       | Ubuntu Server (18.04-LTS) Linux |
 
-# **Access Policies**
+# Access Policies
 ```diff
 The machines on the internal network are not exposed to the public Internet.
-Only the **Jumpbox** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-**On premesis public IP X.X.X.X**
+Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed 
+from the following IP addresses:
+On premesis public IP X.X.X.X
 ```
 ```diff
 Machines within the network can only be accessed by Jumpbox Docker Container.
 I allowed the JumpBox / Bastion Host to access the ELK-VM in order to manage and push asnible playbooks.
-**JumpBox 10.0.0.4/16**
+JumpBox 10.0.0.4/16
 ```
 
-### **A summary of the access policies in place can be found in the table below.**
+### A summary of the access policies in place can be found in the table below.
 | Name                | Publicly Accessible | Allowed IP Addresses    |
 | --------------------|:-------------------:|:-----------------------:|
 | Jump Box            | Yes                 | Prem_Public_IP:22       |
@@ -75,8 +88,11 @@ I allowed the JumpBox / Bastion Host to access the ELK-VM in order to manage and
 
 # **Elk Configuration**
 ```diff
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-Being able to automate tasks saves time which saves money and provides greater productivity and accuracy due to the lack of human error. It's also widely used and has a large support community.  Further benefits is it's simplicity to setup and use, no special coding skills are necessary to use Ansible's Playbooks.
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, 
+which is advantageous because...  Being able to automate tasks saves time which saves money and provides 
+greater productivity and accuracy due to the lack of human error. It's also widely used and has a large 
+support community.  Further benefits is it's simplicity to setup and use, no special coding skills are 
+necessary to use Ansible's Playbooks.
 ```
 
 - **The Elk-Server-Deployment Playbook implements the following tasks:**
@@ -103,13 +119,32 @@ Being able to automate tasks saves time which saves money and provides greater p
     - **Host Metadata**
 
 ```diff
-After **Filebeat** has been deployed you should expect log event data to start being forwarded to Logstash and Elasticsearch.  With **Filebeat** you as the administrator set which files are to be monitored.  For example: In a Linux environment if you have **auditd** installed you can setup a cronjob with crontab to create logs anytime account changes are made and have them stored in the **/var/log/** directory.  Anytime a user account change is made you can have that change write a new file or append an existing log file.  When filebeat detects a file size change in the log file, the filebeat input will then start a harvester, the harvester will read the log file line by line until it ends and then it will initiate a **close_inactive** and the session will end and the harvester will close.  At this point if another account change is made and we are appending, the logfile size will change and then the filebeat input will repeat this process forwarding the new event data to the logstash or elasticsearch to be viewed by Kibana.  This is how you would monitor account changes with a linux system.  Please see the below links for more information on filebeat.
+After Filebeat has been deployed you should expect log event data to start being forwarded to Logstash 
+and Elasticsearch.  With Filebeat you as the administrator set which files are to be monitored.  For 
+example: In a Linux environment if you have auditd installed you can setup a cronjob with crontab 
+to create logs anytime account changes are made and have them stored in the /var/log/ directory.  
+Anytime a user account change is made you can have that change write a new file or append an existing 
+log file.  When filebeat detects a file size change in the log file, the filebeat input will then start
+a harvester, the harvester will read the log file line by line until it ends and then it will initiate a 
+close_inactive and the session will end and the harvester will close.  At this point if another account
+change is made and we are appending, the logfile size will change and then the filebeat input will repeat
+this process forwarding the new event data to the logstash or elasticsearch to be viewed by Kibana.
+This is how you would monitor account changes with a linux system.  Please see the below links for more 
+information on filebeat.
 ```
 
 - https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html 
 - https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html
 ```diff
-After **Metricbeat** has been deployed you should expect to see Metric Metadata being forwarded to Elasticsearch.  The **Metricbeat** **Azure Module** will consist of one or more **Metricsets** This module specifies details about the service including how to connect, how often to collect metrics, and which metrics to collect.  Each **Metricset** is the part of the module that fetches and structures the data.  Rather than collecting each metric as a separate event, metrisets retrieve a list of multiple related metrics in a single request to a remote system.  For example: the **Azure Module** provides an info metricset that collects information and statistics from the **Azure Module** by running the INFO command and parsing the returned result.  Please refer to the below link for more information on the Azure module for Module-specific configuration notes and Metricsets. This is how we would create dashboards to monitor Azure Metrics such as the following:
+After Metricbeat has been deployed you should expect to see Metric Metadata being forwarded to Elasticsearch.
+The Metricbeat Azure Module will consist of one or more Metricsets This module specifies details about the 
+service including how to connect, how often to collect metrics, and which metrics to collect.  Each Metricset
+is the part of the module that fetches and structures the data.  Rather than collecting each metric as a separate
+event, metrisets retrieve a list of multiple related metrics in a single request to a remote system.  
+For example: the Azure Module provides an info metricset that collects information and statistics from the Azure 
+Module by running the INFO command and parsing the returned result.  Please refer to the below link for more 
+information on the Azure module for Module-specific configuration notes and Metricsets. This is how we would 
+create dashboards to monitor Azure Metrics such as the following:
 ```
 | add_cloud_metadata  | add_host_metadata     |
 |---------------------|-----------------------|
