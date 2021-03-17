@@ -143,7 +143,12 @@ In order to use the playbook, you will need to have an Ansible control node alre
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
-3. Run the playbook, and navigate to ____ to check that the installation worked as expected.
+4. Run the playbook with the following command on your terminal  **ansible-playbook elk-server-deployment.yml".  You will see the following output on the screen when the playbook has completed. 
+![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/PlaybookOutput.png)
+
+
+
+ and navigate to ____ to check that the installation worked as expected.
 
 TODO: Answer the following questions to fill in the blanks:
 
