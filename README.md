@@ -33,7 +33,7 @@ shifting attack traffic from the corporate server to a public cloud provider.  T
 availability in the CIA triad.
 ```
 ```diff
-A jumpbox is a secure computer that all admins first connect to before launching any administrative task or use 
+A Jumpbox is a secure computer that all admins first connect to before launching any administrative task or use 
 as an origination point to connect to other servers or untrusted environments.
 ```
 ```diff
@@ -68,11 +68,11 @@ metrics / metadata can be recorded please see the below link.
 The machines on the internal network are not exposed to the public Internet.
 Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed 
 from the following IP addresses:
-On premesis public IP X.X.X.X
+On-premises public IP X.X.X.X
 ```
 ```diff
 Machines within the network can only be accessed by Jumpbox Docker Container.
-I allowed the JumpBox / Bastion Host to access the ELK-VM in order to manage and push asnible playbooks.
+I allowed the JumpBox / Bastion Host to access the ELK-VM in order to manage and push ansible playbooks.
 JumpBox 10.0.0.4/16
 ```
 
@@ -91,7 +91,7 @@ JumpBox 10.0.0.4/16
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, 
 which is advantageous because...  Being able to automate tasks saves time which saves money and provides 
 greater productivity and accuracy due to the lack of human error. It's also widely used and has a large 
-support community.  Further benefits is it's simplicity to setup and use, no special coding skills are 
+support community.  Further benefits are its simplicity to setup and use, no special coding skills are 
 necessary to use Ansible's Playbooks.
 ```
 
@@ -129,7 +129,7 @@ a harvester, the harvester will read the log file line by line until it ends and
 close_inactive and the session will end and the harvester will close.  At this point if another account
 change is made and we are appending, the logfile size will change and then the filebeat input will repeat
 this process forwarding the new event data to the logstash or elasticsearch to be viewed by Kibana.
-This is how you would monitor account changes with a linux system.  Please see the below links for more 
+This is how you would monitor account changes with a Linux system.  Please see the below links for more 
 information on filebeat.
 ```
 
@@ -140,8 +140,8 @@ After Metricbeat has been deployed you should expect to see Metric Metadata bein
 The Metricbeat Azure Module will consist of one or more Metricsets This module specifies details about the 
 service including how to connect, how often to collect metrics, and which metrics to collect.  Each Metricset
 is the part of the module that fetches and structures the data.  Rather than collecting each metric as a separate
-event, metrisets retrieve a list of multiple related metrics in a single request to a remote system.  
-For example: the Azure Module provides an info metricset that collects information and statistics from the Azure 
+event, Metricsets retrieve a list of multiple related metrics in a single request to a remote system.  
+For example: The Azure Module provides an info Metricset that collects information and statistics from the Azure 
 Module by running the INFO command and parsing the returned result.  Please refer to the below link for more 
 information on the Azure module for Module-specific configuration notes and Metricsets. This is how we would 
 create dashboards to monitor Azure Metrics such as the following:
@@ -183,7 +183,7 @@ change them.
 Ansible Interpreter.  This is not your system hosts file but the ansible specific hosts file located in the
 /etc/ansible/ directory.  
 
-When you run your playbook it's going to look in the ansible hosts file for the "Group" with the IP Address(s) of the 
+When you run your playbook, it's going to look in the ansible hosts file for the "Group" with the IP Address(s) of the 
 servers you wish to deploy elk to.  It will locate the [elk] group and it'll see the 10.1.0.4 IP Address(s) and it'll 
 run the playbook to that IP Address(s).  In this environment we only had 1 elk server to deploy.  If you wanted to 
 deploy multiple you'd only need to add the additional IP Address(s) to the hosts file in the [elk] group with the 
@@ -225,7 +225,7 @@ Once you are in the elk-server command line run the following command.
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ElkServerAutomation.png)
 
 ```diff
-6. To verify that your ELK Docker has been deployed up and running properly you will will connect to Kibana.
+6. To verify that your ELK Docker has been deployed up and running properly you will connect to Kibana.
 To do this you will navigate to the Public or Private IP Address configured for the elk-server
 on port 5601.  Use the following URL in your browser to verify both Public and Private access are working.
     - http://10.1.0.4:5601  (Private IP)
@@ -236,7 +236,7 @@ on port 5601.  Use the following URL in your browser to verify both Public and P
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/Kibana.png)
 
 
-# **Lets get the heart of our deployment BEATING!** ❤️
+# **Let's get the heart of our deployment BEATING!** ❤️
 
 ![](https://media.giphy.com/media/3o6Mb96ZOdz0U2TDag/giphy.gif)
 
@@ -248,7 +248,7 @@ The deployment is very similar to the above instructions on deploying the elk-se
 
 ```diff
 1. Copy the filebeat-configuration.yml & the filebeat-playbook.yml to the /etc/ansible/files directory.
-   Copy the Metricbeat-configuration.yml & the Metricbeat-playbook.yml to the /etc/ansible/files directory.
+   Copy the metricbeat-configuration.yml & the metricbeat-playbook.yml to the /etc/ansible/files directory.
 ```
    - [DOWNLOAD - Filebeat-Configuration.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/filebeat-configuration.yml)
    - [DOWNLOAD - Filebeat-Playbook.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/filebeat-playbook.yml)
@@ -266,14 +266,14 @@ The deployment is very similar to the above instructions on deploying the elk-se
 instead of saying filebeat it'll say metricbeat during the process.**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/filebeatinstall.png)
 ```diff
-4. After both playbooks have successfully run SSH into each webserver and verify filebeat/metricbeat installation
+4. After both playbooks have successfully run SSH into each webserver and verify Filebeat/Metricbeat installation
 by running a ls command and you should see both .deb files installed listed below.
     - filebeat-7.4.0-amd64.deb
     - metricbeat-7.4.0-amd64.deb
 ```
 ```diff
-5. The final step is to verify you are recieving logs from your webservers, you will navigate to your Kibana site
-Use the following URL in your browser to verify both Public and Private access are working and you are recieving logs.
+5. The final step is to verify you are receiving logs from your webservers, you will navigate to your Kibana site
+Use the following URL in your browser to verify both Public and Private access are working and you are receiving logs.
     - http://10.1.0.4:5601  (Private IP)
     - http://X.X.X.X:5601   (X.X.X.X  is your Public IP if configured to have Public Access)
 ```
