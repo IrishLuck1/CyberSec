@@ -186,7 +186,7 @@ Once you are in the elk-server command line run the following command.
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ElkServerAutomation.png)
 
 ```diff
-To verify that your ELK Docker has been deployed up and running properly you will will connect to Kibana.
+6. To verify that your ELK Docker has been deployed up and running properly you will will connect to Kibana.
 To do this you will navigate to the Public or Private IP Address configured for the elk-server
 on port 5601.  Use the following URL in your browser to verify both Public and Private access are working.
     - http://10.1.0.4:5601  (Private IP)
