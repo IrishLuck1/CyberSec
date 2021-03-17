@@ -185,10 +185,16 @@ Once you are in the elk-server command line run the following command.
 **If successful you should see the following output displaying the sebp/elk:761 docker container...**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ElkServerAutomation.png)
 
-Which file is the playbook? Where do you copy it?
-Which file do you update to make Ansible run the playbook on a specific machine? 
-How do I specify which machine to install the ELK server on versus which to install Filebeat on?
-_Which URL do you navigate to in order to check that the ELK server is running?
+```diff
+To verify that your ELK Docker has been deployed up and running properly you will will connect to Kibana.
+To do this you will navigate to the Public or Private IP Address configured for the elk-server
+on port 5601.  Use the following URL in your browser to verify both Public and Private access are working.
+    - http://10.1.0.4:5601  (Private IP)
+    - http://X.X.X.X:5601   (X.X.X.X  is your Public IP if configured to have Public Access)
+```
+
+**If successful you should see the following output displaying the Kibana landing page**
+![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/Kibana.png)
 
 
 
