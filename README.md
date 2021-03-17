@@ -129,15 +129,16 @@ After **Metricbeat** has been deployed you should expect to see Metric Metadata 
 # **Using the Playbook**
 In order to use the playbook, you will need to have an Ansible control node already configured, in this deployment the ansible control node was located on the **Bastion Host / Jumpbox**. Assuming you have such a control node provisioned, SSH into the control node and follow the steps below:
 ```diff
-1. Copy the Elk-Server-Deployment.yml file to /etc/ansible directory.
+1. Copy the Elk-Server-Deployment.yml file to /etc/ansible/ directory. (This file is your playbook)
 ```
    - [DOWNLOAD - Elk-Server-Deployment.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
 ```diff
 2. On line 107 of the Ansible.cfg file you will see the entry remoteuser="username" make sure to change this to the username of your admin account on the elk server.
+*note - The stock configuration should be sufficient for most users, but there may be reasons you would want to change them.
 ```
    - [CLICK to view - Ansible.cfg](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
 ```diff
-3. Make sure to update the Ansible Hosts file to include the [elk] group, the elk server IP Address(s) and the Ansible Interpreter.
+3. Make sure to update the Ansible "hosts" file to include the [elk] group, the elk server IP Address(s) and the Ansible Interpreter.  This is not your system hosts file but the ansible specific hosts file located in the /etc/ansible/ directory.  When you run your playbook it's going to look in the ansible hosts file for the IP Address(s) of the servers you wish to deploy elk to.  It will locate the [elk} group and it'll see the 10.1.0.4 ip address and it'll run the playbook to that ip address.  In this environment we only had 1 elk server to deploy.  If you wanted to deploy multiple you'd only need to add the additional IP Address(s) to the hosts file in the [elk] group with the interpreter and the ansible control node would run the playbook on all IP's in the [elk] group.
 
 #A collection of hosts belonging to the "elk" group
 [elk]
@@ -157,8 +158,6 @@ Once you are in the elk-server command line run the following command.
 ```
 **If successful you should see the following output displaying the sebp/elk:761 docker container...**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ElkServerAutomation.png)
-
-TODO: Answer the following questions to fill in the blanks:
 
 Which file is the playbook? Where do you copy it?
 Which file do you update to make Ansible run the playbook on a specific machine? 
