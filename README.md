@@ -151,7 +151,7 @@ interpreter and the ansible control node would run the playbook on all IP's in t
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
-   - [CLICK to view - Ansible Hosts File](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
+   - [CLICK to view - Ansible Hosts File](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/hosts)
 ```diff
 4. Navigate to the /etc/ansible directory where the playbook is located.  Use the following command on your terminal 
 to run the playbook "ansible-playbook elk-server-deployment.yml" You should see similar output to what is in the 
