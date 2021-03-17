@@ -238,7 +238,7 @@ by running a ls command and you should see both .deb files installed listed belo
 to do this.
     - http://10.1.0.4:5601
 ```
-**If successful you should see the following output displaying the Kibana**
+**If successful you should see the following output log events in Kibana**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/Filebeat.png)
 
 
