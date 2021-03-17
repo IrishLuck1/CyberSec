@@ -127,7 +127,7 @@ After **Metricbeat** has been deployed you should expect to see Metric Metadata 
 
 
 # **Using the Playbook! You could say the below is a... Play by Play?...**
-## **How about I just go eat some hay, I can make things out of clay and lay by the bay, I just may... Whadya say?**
+### **How about I just go eat some hay, I can make things out of clay and lay by the bay, I just may... Whadya say?**
 In order to use the playbook, you will need to have an Ansible control node already configured, in this deployment the ansible control node was located on the **Bastion Host / Jumpbox**. Assuming you have such a control node provisioned, SSH into the control node and follow the steps below:
 ```diff
 1. Copy the Elk-Server-Deployment.yml file to /etc/ansible/ directory. (This file is your playbook)
