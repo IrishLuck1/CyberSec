@@ -138,6 +138,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
    - [CLICK to view - Ansible.cfg](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
 ```diff
 3. Make sure to update the Ansible Hosts file to include the [elk] group, the elk server IP Address(s) and the Ansible Interpreter.
+
 #A collection of hosts belonging to the "elk" group
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
