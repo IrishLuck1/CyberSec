@@ -126,7 +126,7 @@ After **Metricbeat** has been deployed you should expect to see Metric Metadata 
 - https://www.elastic.co/guide/en/beats/metricbeat/current/defining-processors.html
 
 
-# **Using the Playbook! You could say the below is a... Play by Play?...**😂
+# Using the Playbook! You could say the below is a... Play by Play?... 😂
 
 In order to use the playbook, you will need to have an Ansible control node already configured, in this deployment the ansible control node was located on the **Bastion Host / Jumpbox**. Assuming you have such a control node provisioned, SSH into the control node and follow the steps below:
 ```diff
