@@ -135,27 +135,29 @@ In order to use the playbook, you will need to have an Ansible control node alre
 ```diff
 2. On line 107 of the Ansible.cfg file you will see the entry remoteuser="username" make sure to change this to the 
 username of your admin account on the elk server.
-*note - The stock configuration should be sufficient for most users, but there may be reasons you would want to change them.
+*note - The stock configuration should be sufficient for most users, but there may be reasons you would want to 
+change them.
 ```
    - [CLICK to view - Ansible.cfg](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/Ansible.cfg)
 ```diff
-3. Make sure to update the Ansible "hosts" file to include the [elk] group, the elk server IP Address(s) and the Ansible 
-Interpreter.  This is not your system hosts file but the ansible specific hosts file located in the /etc/ansible/ 
-directory.  
+3. Make sure to update the Ansible "hosts" file to include the [elk] group, the elk server IP Address(s) and the
+Ansible Interpreter.  This is not your system hosts file but the ansible specific hosts file located in the
+/etc/ansible/ directory.  
 
 When you run your playbook it's going to look in the ansible hosts file for the "Group" with the IP Address(s) of the 
 servers you wish to deploy elk to.  It will locate the [elk] group and it'll see the 10.1.0.4 IP Address(s) and it'll 
 run the playbook to that IP Address(s).  In this environment we only had 1 elk server to deploy.  If you wanted to 
 deploy multiple you'd only need to add the additional IP Address(s) to the hosts file in the [elk] group with the 
 interpreter and the ansible control node would run the playbook on all IP's in the [elk] group.
+#A collection of hosts belonging to the "elk" group
+
+[elk]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+
 
 While you are viewing the hosts file make sure to notice the [webservers] group.  Your playbooks will reference the
 hosts file, and then it'll point toward the group.  This is how your playbook will find the remote nodes to push 
 configurations to.
-
-#A collection of hosts belonging to the "elk" group
-[elk]
-10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 
 # Ex 2: A collection of hosts belonging to the 'webservers' group
 [webservers]
