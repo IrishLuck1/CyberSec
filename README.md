@@ -134,7 +134,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 
 - Copy the **Ansible.cfg** file to **/etc/ansible** directory.
-    - [CLICK HERE to view - Elk-Server-Deployment Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
+    - [DOWNLOAD - Elk-Server-Deployment.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
 
 ```diff
 - *Note that on line 107 you have remoteuser="username" make sure to change this to the username of your admin account.
