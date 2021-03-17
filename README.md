@@ -224,6 +224,8 @@ The deployment is very similar to the above instructions on deploying the elk-se
 3. From the /etc/ansible/files/ directory then run the following command to launch the metricbeat-playbook.
     - ansible-playbook metricbeat-playbook.yml
 ```
+**The below screen shot displays only the installation of filebeat but the output will be the same for metricbeat but
+instead of saying filebeat it'll say metricbeat during the process.**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/filebeatinstall.png)
 ```diff
 4. After both playbooks have successfully run SSH into each webserver and verify filebeat/metricbeat installation
