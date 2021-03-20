@@ -18,8 +18,8 @@ certain pieces of it; such as Filebeat/Metricbeat or any other Beats desired.
 - **ELK Configuration**
     - **Beats in Use**
     - **Machines Being Monitored**
-- **How to Use the Ansible Build**
-
+- **ELK Deployment, Play by Play**
+- **Beats Deployment, Play by Play**
 
 # Description of the Topology
 ```diff
