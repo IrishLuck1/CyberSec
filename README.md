@@ -80,9 +80,9 @@ JumpBox 10.0.0.4/16
 | Name                | Publicly Accessible | Allowed IP Addresses    |
 | --------------------|:-------------------:|:-----------------------:|
 | Jump Box            | Yes                 | Prem_Public_IP:22       |
-| Web1 - DVWA         | No                  | N/A                     |
-| Web2 - DVWA         | No                  | N/A                     |
-| Web3 - DVWA         | No                  | N/A                     |
+| Web1 - DVWA         | Yes                 | X.X.X.X:80              |
+| Web2 - DVWA         | Yes                 | X.X.X.X:80              |
+| Web3 - DVWA         | Yes                 | X.X.X.X:80              |
 | Elk-Server/Kibana   | Yes                 | Public_IP:5601          |
 
 
