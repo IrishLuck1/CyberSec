@@ -76,7 +76,7 @@ I allowed the JumpBox / Bastion Host to access the ELK-VM in order to manage and
 JumpBox 10.0.0.4/16
 ```
 
-### Aummary of Access Policies / Firewall Rules in the table below.
+### Summary of Access Policies / Firewall Rules in the table below.
 | Name                    | Publicly Accessible | Allowed IP Addresses    |
 | ------------------------|:-------------------:|:-----------------------:|
 | Bastion/Ansible Ctrl    | Yes                 | Prem_Public_IP:22       |
