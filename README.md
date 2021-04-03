@@ -77,17 +77,17 @@ JumpBox 10.0.0.4/16
 ```
 
 ### A summary of the Access Policies / Firewall Rules in place can be found in the table below.
-| Name                | Publicly Accessible | Allowed IP Addresses    |
-| --------------------|:-------------------:|:-----------------------:|
-| Jump Box            | Yes                 | Prem_Public_IP:22       |
-| Web1 - DVWA         | Yes                 | X.X.X.X:80              |
-| Web1 - Ansible      | No                  | X.X.X.X:22              |
-| Web2 - DVWA         | Yes                 | X.X.X.X:80              |
-| Web2 - Ansible      | No                  | X.X.X.X:22              |
-| Web3 - DVWA         | Yes                 | X.X.X.X:80              |
-| Web3 - Ansible      | No                  | X.X.X.X:22              |
-| Elk-Server/Kibana   | Yes                 | X.X.X.X:5601            |
-| Elk-Server/Ansible  | No                  | X.X.X.X:22              |
+| Name                    | Publicly Accessible | Allowed IP Addresses    |
+| ------------------------|:-------------------:|:-----------------------:|
+| Bastion/Ansible Ctrl    | Yes                 | Prem_Public_IP:22       |
+| Web1 - DVWA             | Yes                 | X.X.X.X:80              |
+| Ansible - Web1          | No                  | X.X.X.X:22              |
+| Web2 - DVWA             | Yes                 | X.X.X.X:80              |
+| Ansible - Web2          | No                  | X.X.X.X:22              |
+| Web3 - DVWA             | Yes                 | X.X.X.X:80              |
+| Ansible - Web3          | No                  | X.X.X.X:22              |
+| Elk-Server/Kibana       | Yes                 | X.X.X.X:5601            |
+| Ansible/Elk-Server      | No                  | X.X.X.X:22              |
 
 
 # **Elk Configuration**
