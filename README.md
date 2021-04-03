@@ -81,12 +81,12 @@ JumpBox 10.0.0.4/16
 | ------------------------|:-------------------:|:-----------------------:|
 | Bastion/Ansible Ctrl    | Yes                 | Prem_Public_IP:22       |
 | Web1 - DVWA             | Yes                 | X.X.X.X:80              |
-| Ansible - Web1          | No                  | X.X.X.X:22              |
 | Web2 - DVWA             | Yes                 | X.X.X.X:80              |
-| Ansible - Web2          | No                  | X.X.X.X:22              |
 | Web3 - DVWA             | Yes                 | X.X.X.X:80              |
-| Ansible - Web3          | No                  | X.X.X.X:22              |
 | Elk-Server/Kibana       | Yes                 | X.X.X.X:5601            |
+| Ansible - Web1          | No                  | X.X.X.X:22              |
+| Ansible - Web2          | No                  | X.X.X.X:22              |
+| Ansible - Web3          | No                  | X.X.X.X:22              |
 | Ansible/Elk-Server      | No                  | X.X.X.X:22              |
 
 
