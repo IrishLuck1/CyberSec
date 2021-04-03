@@ -81,12 +81,13 @@ JumpBox 10.0.0.4/16
 | --------------------|:-------------------:|:-----------------------:|
 | Jump Box            | Yes                 | Prem_Public_IP:22       |
 | Web1 - DVWA         | Yes                 | X.X.X.X:80              |
-| Web1 - DVWA         | No                  | X.X.X.X:22              |
+| Web1 - Ansible      | No                  | X.X.X.X:22              |
 | Web2 - DVWA         | Yes                 | X.X.X.X:80              |
-| Web2 - DVWA         | No                  | X.X.X.X:22              |
+| Web2 - Ansible      | No                  | X.X.X.X:22              |
 | Web3 - DVWA         | Yes                 | X.X.X.X:80              |
-| Web3 - DVWA         | No                  | X.X.X.X:22              |
+| Web3 - Ansible      | No                  | X.X.X.X:22              |
 | Elk-Server/Kibana   | Yes                 | X.X.X.X:5601            |
+| Elk-Server/Ansible  | No                  | X.X.X.X:22              |
 
 
 # **Elk Configuration**
