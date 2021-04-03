@@ -81,9 +81,12 @@ JumpBox 10.0.0.4/16
 | --------------------|:-------------------:|:-----------------------:|
 | Jump Box            | Yes                 | Prem_Public_IP:22       |
 | Web1 - DVWA         | Yes                 | X.X.X.X:80              |
+| Web1 - DVWA         | No                  | X.X.X.X:22              |
 | Web2 - DVWA         | Yes                 | X.X.X.X:80              |
+| Web2 - DVWA         | No                  | X.X.X.X:22              |
 | Web3 - DVWA         | Yes                 | X.X.X.X:80              |
-| Elk-Server/Kibana   | Yes                 | Public_IP:5601          |
+| Web3 - DVWA         | No                  | X.X.X.X:22              |
+| Elk-Server/Kibana   | Yes                 | X.X.X.X:5601            |
 
 
 # **Elk Configuration**
