@@ -18,8 +18,8 @@ certain pieces of it; such as Filebeat/Metricbeat or any other Beats desired.
 - **ELK Configuration**
     - **Beats in Use**
     - **Machines Being Monitored**
-- **How to Use the Ansible Build**
-
+- **ELK Deployment, Play by Play**
+- **Beats Deployment, Play by Play**
 
 # Description of the Topology
 ```diff
@@ -125,7 +125,7 @@ example: In a Linux environment if you have auditd installed you can setup a cro
 to create logs anytime account changes are made and have them stored in the /var/log/ directory.  
 Anytime a user account change is made you can have that change write a new file or append an existing 
 log file.  When filebeat detects a file size change in the log file, the filebeat input will then start
-a harvester, the harvester will read the log file line by line until it ends and then it will initiate a 
+a harvester, the harvester will read the log file line by line until it reaches the end and then it will initiate a 
 close_inactive and the session will end and the harvester will close.  At this point if another account
 change is made and we are appending, the logfile size will change and then the filebeat input will repeat
 this process forwarding the new event data to the logstash or elasticsearch to be viewed by Kibana.
@@ -167,6 +167,8 @@ create dashboards to monitor Azure Metrics such as the following:
 
 
 # Using the Playbook! You could say the below is a... Play by Play?... 😂
+
+![](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/ezgif-6-f88aa07dc25f.gif)
 ```diff
 In order to use the playbook, you will need to have an Ansible control node already configured, in this deployment the 
 ansible control node was located on the **Bastion Host / Jumpbox**. Assuming you have such a control node provisioned, 
@@ -193,8 +195,8 @@ servers you wish to deploy elk to.  It will locate the [elk] group and it'll see
 run the playbook to that IP Address(s).  In this environment we only had 1 elk server to deploy.  If you wanted to 
 deploy multiple you'd only need to add the additional IP Address(s) to the hosts file in the [elk] group with the 
 interpreter and the ansible control node would run the playbook on all IP's in the [elk] group.
-#A collection of hosts belonging to the "elk" group
 
+#A collection of hosts belonging to the "elk" group
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 
