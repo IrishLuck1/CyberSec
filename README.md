@@ -83,13 +83,15 @@ JumpBox 10.0.0.4/16
 | Name                         | Publicly Accessible | Allowed IP Addresses    |
 | -----------------------------|:-------------------:|:-----------------------:|
 | Bastion/Ansible Controller   | Yes                 | Prem_Public_IP:22       |
-| Web1 - DVWA                  | Yes                 | X.X.X.X:80              |
-| Web2 - DVWA                  | Yes                 | X.X.X.X:80              |
-| Web3 - DVWA                  | Yes                 | X.X.X.X:80              |
-| Elk-Server/Kibana            | Yes                 | X.X.X.X:5601            |
-| Ansible - Web1               | No                  | 10.0.0.4:22             |
+| Web1,2 & 3 - DVWA            | Yes                 | X.X.X.X:80              |
+| Ansible - Web1,2 & 3         | No                  | 10.0.0.4:22             |
 | Ansible - Web2               | No                  | 10.0.0.4:22             |
 | Ansible - Web3               | No                  | 10.0.0.4:22             |
+
+| -----------------------------Elk-Server-NSG DMZ----------------------------- |
+|:----------------------------------------------------------------------------:|
+| Name                         | Publicly Accessible | Allowed IP Addresses    |
+| Elk-Server/Kibana            | Yes                 | X.X.X.X:5601            |
 | Ansible/Elk-Server           | No                  | 10.0.0.4:22             |
 
 
