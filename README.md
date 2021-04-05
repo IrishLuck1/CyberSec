@@ -77,7 +77,7 @@ JumpBox 10.0.0.4/16
 ```
 
 ### Summary of Access Policies / Firewall Rules in the table below.
-| -------------------------------_RedTeamSG DMZ_------------------------------ |
+| --------------------------------RedTeamSG DMZ------------------------------- |
 |:----------------------------------------------------------------------------:|
 
 | Name                         | Publicly Accessible | Allowed IP Addresses    |
