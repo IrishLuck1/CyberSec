@@ -82,7 +82,7 @@ JumpBox 10.0.0.4/16
 
 | Name                         | Publicly Accessible | Allowed IP Addresses    |
 | -----------------------------|:-------------------:|:-----------------------:|
-| Bastion/Ansible Controller   | Yes                 | X.X.X.X:22              |
+| Bastion / Ansible Controller | Yes                 | X.X.X.X:22              |
 | Web1,2 & 3 - DVWA            | Yes                 | X.X.X.X:80              |
 | Ansible - Web1,2 & 3         | No                  | 10.0.0.4:22             |
 
@@ -92,7 +92,7 @@ JumpBox 10.0.0.4/16
 | Name                         | Publicly Accessible | Allowed IP Addresses    |
 | -----------------------------|:-------------------:|:-----------------------:|
 | Elk-Server/Kibana            | Yes                 | X.X.X.X:5601            |
-| Ansible/ Bastion/Elk-Server  | No                  | 10.0.0.4:22             |
+| Ansible (Bastion)/Elk-Server | No                  | 10.0.0.4:22             |
 
 
 # **Elk Configuration**
