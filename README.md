@@ -1,4 +1,4 @@
-# Automated ELK Stack Deployment
+# Automated ELK Stack & Beats Deployment
 
 ### The files in this repository were used to configure the network depicted below.
 
@@ -76,17 +76,18 @@ I allowed the JumpBox / Bastion Host to access the ELK-VM in order to manage and
 JumpBox 10.0.0.4/16
 ```
 
-### A summary of the Access Policies / Firewall Rules in place can be found in the table below.
-| Name                | Publicly Accessible | Allowed IP Addresses    |
-| --------------------|:-------------------:|:-----------------------:|
-| Jump Box            | Yes                 | Prem_Public_IP:22       |
-| Web1 - DVWA         | Yes                 | X.X.X.X:80              |
-| Web1 - DVWA         | No                  | X.X.X.X:22              |
-| Web2 - DVWA         | Yes                 | X.X.X.X:80              |
-| Web2 - DVWA         | No                  | X.X.X.X:22              |
-| Web3 - DVWA         | Yes                 | X.X.X.X:80              |
-| Web3 - DVWA         | No                  | X.X.X.X:22              |
-| Elk-Server/Kibana   | Yes                 | X.X.X.X:5601            |
+### Summary of Access Policies / Firewall Rules in the table below.
+| Name                       | Publicly Accessible | Allowed IP Addresses    |
+| -----------------------------|:-------------------:|:-----------------------:|
+| Bastion/Ansible Controller   | Yes                 | Prem_Public_IP:22       |
+| Web1 - DVWA                  | Yes                 | X.X.X.X:80              |
+| Web2 - DVWA                  | Yes                 | X.X.X.X:80              |
+| Web3 - DVWA                  | Yes                 | X.X.X.X:80              |
+| Elk-Server/Kibana            | Yes                 | X.X.X.X:5601            |
+| Ansible - Web1               | No                  | 10.0.0.4:22             |
+| Ansible - Web2               | No                  | 10.0.0.4:22             |
+| Ansible - Web3               | No                  | 10.0.0.4:22             |
+| Ansible/Elk-Server           | No                  | 10.0.0.4:22             |
 
 
 # **Elk Configuration**
