@@ -77,7 +77,8 @@ JumpBox 10.0.0.4/16
 ```
 
 ### Summary of Access Policies / Firewall Rules in the table below.
-| Name                       | Publicly Accessible | Allowed IP Addresses    |
+|: RedTeamSG DMZ                                                              :|
+| Name                         | Publicly Accessible | Allowed IP Addresses    |
 | -----------------------------|:-------------------:|:-----------------------:|
 | Bastion/Ansible Controller   | Yes                 | Prem_Public_IP:22       |
 | Web1 - DVWA                  | Yes                 | X.X.X.X:80              |
