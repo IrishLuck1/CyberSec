@@ -82,8 +82,8 @@ JumpBox 10.0.0.4/16
 
 | Name                         | Publicly Accessible | Allowed IP Addresses    |
 | -----------------------------|:-------------------:|:-----------------------:|
-| Bastion / Ansible Controller | Yes                 | X.X.X.X:22              |
-| Web1,2 & 3 - DVWA            | Yes                 | X.X.X.X:80              |
+| Bastion / Ansible Controller | Yes                 | Public_IP:22            |
+| Web1,2 & 3 - DVWA            | Yes                 | Public_IP:80            |
 | Ansible - Web1,2 & 3         | No                  | 10.0.0.4:22             |
 
 #
