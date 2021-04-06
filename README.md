@@ -134,10 +134,13 @@ After Filebeat has been deployed you should expect log event data to start being
 and Elasticsearch.  With Filebeat you as the administrator set which files are to be monitored.  For 
 example: In a Linux environment if you have auditd installed you can setup a cronjob with crontab 
 to create logs anytime account changes are made and have them stored in the /var/log/ directory.  
+
 Anytime a user account change is made you can have that change write a new file or append an existing 
 log file.  When filebeat detects a file size change in the log file, the filebeat input will then start
 a harvester, the harvester will read the log file line by line until it reaches the end and then it will initiate a 
-close_inactive and the session will end and the harvester will close.  At this point if another account
+close_inactive and the session will end and the harvester will close.  
+
+At this point if another account
 change is made and we are appending, the logfile size will change and then the filebeat input will repeat
 this process forwarding the new event data to the logstash or elasticsearch to be viewed by Kibana.
 This is how you would monitor account changes with a Linux system.  Please see the below links for more 
@@ -152,6 +155,7 @@ The Metricbeat Azure Module will consist of one or more Metricsets This module s
 service including how to connect, how often to collect metrics, and which metrics to collect.  Each Metricset
 is the part of the module that fetches and structures the data.  Rather than collecting each metric as a separate
 event, Metricsets retrieve a list of multiple related metrics in a single request to a remote system.  
+
 For example: The Azure Module provides an info Metricset that collects information and statistics from the Azure 
 Module by running the INFO command and parsing the returned result.  Please refer to the below link for more 
 information on the Azure module for Module-specific configuration notes and Metricsets. This is how we would 
