@@ -302,7 +302,7 @@ Use the following URL in your browser to verify both Public and Private access a
 **If successful you should see the following log events in Kibana**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/Filebeat.png)
 
-# CONGRADULATIONS ON YOUR DEPLOYMENT!!!
+# CONGRATULATIONS ON YOUR DEPLOYMENT!!!
 ![](https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif)
 
 
