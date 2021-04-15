@@ -76,7 +76,7 @@ I allowed the JumpBox / Bastion Host to access the ELK-VM in order to manage and
 JumpBox 10.0.0.4/16
 ```
 
-### Summary of Access Policies / Firewall Rules in the table below.
+### Summary of Access Policies / Firewall Rules in the tables below.
 | RedTeamSG DMZ ______________________________________________________________ |
 |----------------------------------------------------------------------------- |
 
