@@ -8,9 +8,9 @@ The files/playbooks listed below have been tested and used to generate a live EL
 to either recreate the entire deployment pictured above. Alternatively, these files can be modified to install only 
 certain pieces of it; such as Filebeat/Metricbeat or any other Beats desired.
 ```
-- [CLICK HERE to view - Elk-Server-Deployment Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
-- [CLICK HERE to view - FileBeat Deployment Playbook](Ansible/filebeat-playbook.yml)
-- [CLICK HERE to view - MetricBeat Deployment Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/metricbeat-playbook.yml)
+- [CLICK to view - Elk-Server-Deployment Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
+- [CLICK to view - FileBeat Deployment Playbook](Ansible/filebeat-playbook.yml)
+- [CLICK to view - MetricBeat Deployment Playbook](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/metricbeat-playbook.yml)
 
 **This document contains the following details:**
 - **Description of the Topology**
@@ -76,18 +76,25 @@ I allowed the JumpBox / Bastion Host to access the ELK-VM in order to manage and
 JumpBox 10.0.0.4/16
 ```
 
-### Summary of Access Policies / Firewall Rules in the table below.
-| Name                       | Publicly Accessible | Allowed IP Addresses    |
+### Summary of Access Policies / Firewall Rules in the tables below.
+| RedTeamSG DMZ ______________________________________________________________ |
+|----------------------------------------------------------------------------- |
+
+| Name                         | Publicly Accessible | Allowed IP Addresses    |
 | -----------------------------|:-------------------:|:-----------------------:|
-| Bastion/Ansible Controller   | Yes                 | Prem_Public_IP:22       |
-| Web1 - DVWA                  | Yes                 | X.X.X.X:80              |
-| Web2 - DVWA                  | Yes                 | X.X.X.X:80              |
-| Web3 - DVWA                  | Yes                 | X.X.X.X:80              |
+| Bastion / Ansible Controller | Yes                 | Public_IP:22            |
+| Web1,2 & 3 - DVWA            | Yes                 | Public_IP:80            |
+| Ansible - Web1,2 & 3         | No                  | 10.0.0.4:22             |
+
+#
+
+| Elk-Server-NSG DMZ __________________________________________________________|
+|:----------------------------------------------------------------------------:|
+
+| Name                         | Publicly Accessible | Allowed IP Addresses    |
+| -----------------------------|:-------------------:|:-----------------------:|
 | Elk-Server/Kibana            | Yes                 | X.X.X.X:5601            |
-| Ansible - Web1               | No                  | 10.0.0.4:22             |
-| Ansible - Web2               | No                  | 10.0.0.4:22             |
-| Ansible - Web3               | No                  | 10.0.0.4:22             |
-| Ansible/Elk-Server           | No                  | 10.0.0.4:22             |
+| Ansible (Bastion)/Elk-Server | No                  | 10.0.0.4:22             |
 
 
 # **Elk Configuration**
@@ -127,10 +134,13 @@ After Filebeat has been deployed you should expect log event data to start being
 and Elasticsearch.  With Filebeat you as the administrator set which files are to be monitored.  For 
 example: In a Linux environment if you have auditd installed you can setup a cronjob with crontab 
 to create logs anytime account changes are made and have them stored in the /var/log/ directory.  
+
 Anytime a user account change is made you can have that change write a new file or append an existing 
 log file.  When filebeat detects a file size change in the log file, the filebeat input will then start
 a harvester, the harvester will read the log file line by line until it reaches the end and then it will initiate a 
-close_inactive and the session will end and the harvester will close.  At this point if another account
+close_inactive and the session will end and the harvester will close.  
+
+At this point if another account
 change is made and we are appending, the logfile size will change and then the filebeat input will repeat
 this process forwarding the new event data to the logstash or elasticsearch to be viewed by Kibana.
 This is how you would monitor account changes with a Linux system.  Please see the below links for more 
@@ -145,6 +155,7 @@ The Metricbeat Azure Module will consist of one or more Metricsets This module s
 service including how to connect, how often to collect metrics, and which metrics to collect.  Each Metricset
 is the part of the module that fetches and structures the data.  Rather than collecting each metric as a separate
 event, Metricsets retrieve a list of multiple related metrics in a single request to a remote system.  
+
 For example: The Azure Module provides an info Metricset that collects information and statistics from the Azure 
 Module by running the INFO command and parsing the returned result.  Please refer to the below link for more 
 information on the Azure module for Module-specific configuration notes and Metricsets. This is how we would 
@@ -181,7 +192,7 @@ SSH into the control node and follow the steps below:
 ```diff
 1. Copy the Elk-Server-Deployment.yml file to /etc/ansible/ directory. (This file is your playbook)
 ```
-   - [DOWNLOAD - Elk-Server-Deployment.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
+   - [CLICK to view - Elk-Server-Deployment.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/elk-server-deployment.yml)
 ```diff
 2. On line 107 of the Ansible.cfg file you will see the entry remoteuser="username" make sure to change this to the 
 username of your admin account on the elk server.
@@ -261,10 +272,10 @@ The deployment is very similar to the above instructions on deploying the elk-se
 1. Copy the filebeat-configuration.yml & the filebeat-playbook.yml to the /etc/ansible/files directory.
    Copy the metricbeat-configuration.yml & the metricbeat-playbook.yml to the /etc/ansible/files directory.
 ```
-   - [DOWNLOAD - Filebeat-Configuration.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/filebeat-configuration.yml)
-   - [DOWNLOAD - Filebeat-Playbook.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/filebeat-playbook.yml)
-   - [DOWNLOAD - Metricbeat-Confgiuration.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/metricbeat-configuration.yml)
-   - [DOWNLOAD - Metricbeat-Playbook.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/metricbeat-playbook.yml)
+   - [CLICK to view - Filebeat-Configuration.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/filebeat-configuration.yml)
+   - [CLICK to view - Filebeat-Playbook.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/filebeat-playbook.yml)
+   - [CLICK to view - Metricbeat-Confgiuration.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/metricbeat-configuration.yml)
+   - [CLICK to view - Metricbeat-Playbook.yml](https://github.com/IrishLuck1/CyberSec/blob/main/Ansible/metricbeat-playbook.yml)
 ```diff
 2. From the /etc/ansible/files/ directory then run the following command to launch the filebeat-playbook.
     - ansible-playbook filebeat-playbook.yml
@@ -291,7 +302,7 @@ Use the following URL in your browser to verify both Public and Private access a
 **If successful you should see the following log events in Kibana**
 ![alt text](https://github.com/IrishLuck1/CyberSec/blob/main/ScreenShots/Filebeat.png)
 
-# CONGRADULATIONS ON YOUR DEPLOYMENT!!!
+# CONGRATULATIONS ON YOUR DEPLOYMENT!!!
 ![](https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif)
 
 
